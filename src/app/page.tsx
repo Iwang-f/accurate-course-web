@@ -73,7 +73,7 @@ const FAQS = [
     a: "Bervariasi. Fundamental 2–3 sesi @3 jam. Private training menyesuaikan scope materi dan jumlah peserta. Kami diskusikan kebutuhan dulu sebelum memulai.",
   },
   {
-    q: "Apada pelatihan langsung menggunakan data perusahaan?",
+    q: "Apakah pelatihan langsung menggunakan data perusahaan?",
     a: "Sangat dianjurkan. Untuk private training, kami import data dummy atau data riil perusahaan agar latihan benar-benar relevan.",
   },
   {
