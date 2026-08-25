@@ -1,96 +1,49 @@
 /**
- * Data konten website Accurate Pro Academy — bahasa Indonesia profesional, tanpa AI-slop.
- * Semua copy ditulis ulang: no em dash, no "bukan sekadar", no "hafal tombol",
- * no "praktisi" sebagai kata kunci paksa. Gunakan kalimat deklaratif langsung.
+ * Data konten website Accurate Pro Academy
+ * Satu sumber kebenaran — ganti konten di sini, render otomatis ke semua komponen.
+ *
+ * DRAFT: Beberapa nilai placeholder (WA number, URL) harus diganti sebelum go-live.
  */
 
 export const SITE = {
   name: "Accurate Pro Academy",
-  brandMark: { first: "accurate", accent: "pro", sub: "academy" },
+  subline: "akademi",
   url: "https://accurate-course-prototype.vercel.app",
-  description:
-    "Kursus Accurate untuk tim finance, akuntan, dan pemilik usaha yang ingin menguasai software akuntansi secara sistematis.",
+  description: "Kursus Accurate untuk tim finance, akuntan, dan pemilik usaha yang ingin menguasai software akuntansi secara sistematis.",
+  keywords: ["kursus Accurate", "training Accurate", "akuntansi", "Accurate Online", "Accurate Desktop V5"],
   whatsapp: "https://wa.me/6280000000000",
   isDraft: true,
 } as const;
 
-export const NAV_LINKS = [
+export const NAV = [
   { label: "Program", href: "#program" },
   { label: "Tentang", href: "#tentang" },
   { label: "FAQ", href: "#faq" },
 ] as const;
 
-export const AUDIENCE = [
-  { label: "Pemilik usaha", note: "Yang ingin laporan keuangan lebih rapi dan terstruktur" },
-  { label: "Tim finance", note: "Yang perlu kompetensi Accurate secara teknis dan konseptual" },
-  { label: "Akuntan publik", note: "Yang ingin memperbarui skill software akuntansi" },
+export const TARGET = [
+  { judul: "Pemilik Usaha", deskripsi: "Membutuhkan laporan keuangan yang rapi dan terstruktur tanpa harus menjadi akuntan." },
+  { judul: "Tim Finance", deskripsi: "Ingin memperkuat kompetensi Accurate secara teknis sekaligus konseptual." },
+  { judul: "Akuntan Publik", deskripsi: "Perlu memperbarui keterampilan software akuntansi untuk menunjang pekerjaan klien." },
 ] as const;
 
-export const BENEFITS = [
-  {
-    title: "Kurikulum terstruktur",
-    description:
-      "Materi disusun berdasarkan alur kerja akuntansi, bukan sekadar daftar fitur.",
-  },
-  {
-    title: "Studi kasus bisnis nyata",
-    description:
-      "Setiap sesi menggunakan ilustrasi transaksi yang umum terjadi di perusahaan Indonesia.",
-  },
-  {
-    title: "Pendampingan pasca-training",
-    description:
-      "Peserta mendapat akses konsultasi singkat via WhatsApp setelah sesi selesai.",
-  },
+export const KEUNGGULAN = [
+  { judul: "Kurikulum Berbasis Praktik", isi: "Materi mengikuti alur kerja akuntansi harian, bukan daftar menu software." },
+  { judul: "Studi Kasus Perusahaan Indonesia", isi: "Contoh transaksi dan pelaporan yang relevan dengan regulasi dan kebiasaan bisnis lokal." },
+  { judul: "Pendampingan Setelah Kelas", isi: "Peserta mendapatkan akses konsultasi singkat via WhatsApp pasca-training." },
 ] as const;
 
-export const PROGRAMS = [
-  {
-    title: "Accurate Online Fundamental",
-    description:
-      "Mencakup pengaturan data master, transaksi pembelian dan penjualan, manajemen stok, serta penyusunan laporan keuangan dasar.",
-  },
-  {
-    title: "Accurate Desktop V5",
-    description:
-      "Mencakup siklus akuntansi penuh: pencatatan, penyesuaian, penyusutan aset tetap, hingga closing period.",
-  },
-  {
-    title: "Private Training",
-    description:
-      "Materi disesuaikan dengan kebutuhan perusahaan. Bisa dilakukan di lokasi klien (Jabodetabek) atau secara daring.",
-  },
-  {
-    title: "Konsultasi dan Review",
-    description:
-      "Review terhadap alur kerja Accurate yang sudah berjalan, disertai rekomendasi perbaikan.",
-  },
+export const PROGRAM = [
+  { judul: "Accurate Online Fundamental", isi: "Mencakup pembuatan data master, transaksi pembelian dan penjualan, manajemen stok, serta penyusunan laporan keuangan dasar." },
+  { judul: "Accurate Desktop V5", isi: "Meliputi siklus akuntansi penuh: pencatatan jurnal, penyesuaian, penyusutan aset tetap, hingga closing period." },
+  { judul: "Private Training", isi: "Kurikulum disesuaikan dengan kebutuhan perusahaan. Dapat dilaksanakan di lokasi (Jabodetabek) atau secara daring." },
+  { judul: "Konsultasi dan Review", isi: "Evaluasi terhadap alur kerja Accurate yang telah berjalan, disertai rekomendasi perbaikan." },
 ] as const;
 
-export const FAQS = [
-  {
-    question: "Apakah training ini cocok untuk pemula yang belum pernah menggunakan Accurate?",
-    answer:
-      "Cocok. Modul fundamental dirancang untuk peserta tanpa pengalaman sebelumnya. Instruktur akan memandu dari navigasi dasar hingga siap melakukan pencatatan secara mandiri.",
-  },
-  {
-    question: "Apakah training dilaksanakan secara online atau offline?",
-    answer:
-      "Kelas reguler dilaksanakan secara daring. Untuk private training, pelaksanaan dapat disesuaikan: daring atau onsite di perusahaan.",
-  },
-  {
-    question: "Berapa lama durasi setiap program?",
-    answer:
-      "Durasi bervariasi tergantung cakupan materi. Rata-rata 2 hingga 4 sesi (@ 3 jam). Private training durasinya ditentukan setelah diskusi kebutuhan.",
-  },
-  {
-    question: "Apakah peserta bisa menggunakan data perusahaan saat latihan?",
-    answer:
-      "Bisa. Untuk private training, peserta sangat dianjurkan menggunakan data perusahaan agar hasil latihan langsung bisa diterapkan.",
-  },
-  {
-    question: "Apa perbedaan Accurate Pro Academy dengan lembaga training Accurate lainnya?",
-    answer:
-      "Instruktur kami adalah akuntan yang aktif menangani pembukuan. Pendekatan yang diajarkan tidak hanya teknis pengoperasian software, tetapi juga pemahaman akuntansi yang mendasarinya.",
-  },
+export const FAQ = [
+  { tanya: "Apakah program ini cocok untuk pemula yang belum pernah menggunakan Accurate?", jawab: "Cocok. Modul fundamental dirancang untuk peserta tanpa pengalaman sebelumnya. Instruktur akan membimbing dari navigasi dasar hingga peserta mampu melakukan pencatatan secara mandiri." },
+  { tanya: "Bagaimana pelaksanaan training: online atau offline?", jawab: "Kelas reguler dilaksanakan secara daring. Untuk Private Training, format dapat disesuaikan: daring atau onsite di perusahaan." },
+  { tanya: "Berapa lama durasi setiap program?", jawab: "Bergantung pada cakupan materi. Rata-rata 2 hingga 4 sesi (masing-masing 3 jam). Untuk Private Training, durasi ditentukan setelah diskusi kebutuhan." },
+  { tanya: "Apakah peserta dapat menggunakan data perusahaannya saat latihan?", jawab: "Sangat dianjurkan, khususnya untuk Private Training. Latihan dengan data nyata membuat hasil langsung dapat diterapkan." },
+  { tanya: "Apa yang membedakan Accurate Pro Academy dari lembaga training Accurate lain?", jawab: "Instruktur adalah akuntan yang aktif menangani pembukuan klien. Pendekatan yang diajarkan tidak hanya teknis software, tetapi juga pemahaman akuntansi yang mendasarinya." },
 ] as const;
