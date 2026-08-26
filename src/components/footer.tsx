@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="border-t border-border bg-primary px-5 py-12 text-primary-foreground sm:px-8">
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="font-mono text-sm font-semibold tracking-[0.12em]">ACCURATE PRO</p>
+          <p className="text-sm font-extrabold tracking-[0.12em]">ACCURATE PRO</p>
           <p className="mt-1 text-xs uppercase tracking-[0.2em] text-primary-foreground/60">{SITE.subline}</p>
           <p className="mt-5 max-w-sm text-sm leading-6 text-primary-foreground/70">Pelatihan software akuntansi untuk tim finance, pemilik usaha, dan akuntan.</p>
         </div>

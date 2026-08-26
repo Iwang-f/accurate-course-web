@@ -21,10 +21,13 @@ export const NAV = [
   { label: "Tentang Kami", href: "/tentang" },
 ] as const;
 
-export const TARGET = [
-  { judul: "Pemilik Usaha", deskripsi: "Membutuhkan laporan keuangan yang rapi dan terstruktur tanpa harus menjadi akuntan." },
-  { judul: "Tim Finance", deskripsi: "Ingin memperkuat kompetensi Accurate secara teknis sekaligus konseptual." },
-  { judul: "Akuntan Publik", deskripsi: "Perlu memperbarui keterampilan software akuntansi untuk menunjang pekerjaan klien." },
+/** Shared shape for card-style content blocks (target audience, programs). */
+export type Topic = Readonly<{ judul: string; isi: string }>;
+
+export const TARGET: readonly Topic[] = [
+  { judul: "Pemilik Usaha", isi: "Membutuhkan laporan keuangan yang rapi dan terstruktur tanpa harus menjadi akuntan." },
+  { judul: "Tim Finance", isi: "Ingin memperkuat kompetensi Accurate secara teknis sekaligus konseptual." },
+  { judul: "Akuntan Publik", isi: "Perlu memperbarui keterampilan software akuntansi untuk menunjang pekerjaan klien." },
 ] as const;
 
 export const KEUNGGULAN = [
@@ -33,7 +36,7 @@ export const KEUNGGULAN = [
   { judul: "Pendampingan Setelah Kelas", isi: "Peserta mendapatkan akses konsultasi singkat via WhatsApp pasca-training." },
 ] as const;
 
-export const PROGRAM = [
+export const PROGRAM: readonly Topic[] = [
   { judul: "Accurate Online Fundamental", isi: "Mencakup pembuatan data master, transaksi pembelian dan penjualan, manajemen stok, serta penyusunan laporan keuangan dasar." },
   { judul: "Accurate Desktop V5", isi: "Meliputi siklus akuntansi penuh: pencatatan jurnal, penyesuaian, penyusutan aset tetap, hingga closing period." },
   { judul: "Private Training", isi: "Kurikulum disesuaikan dengan kebutuhan perusahaan. Dapat dilaksanakan di lokasi (Jabodetabek) atau secara daring." },

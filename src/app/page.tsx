@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SITE, TARGET, KEUNGGULAN, PROGRAM, FAQ } from "@/lib/site";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { TopicCards } from "@/components/topic-cards";
+import { CtaBanner } from "@/components/cta-banner";
 
 export default function Home() {
   return (
@@ -40,8 +42,8 @@ export default function Home() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
-                      <h3 className="text-lg font-bold">{PROGRAM[0].judul}</h3>
-                      <p className="text-sm text-muted-foreground">{PROGRAM[0].isi}</p>
+                      <h3 className="text-lg font-bold">{PROGRAM.at(0)?.judul}</h3>
+                      <p className="text-sm text-muted-foreground">{PROGRAM.at(0)?.isi}</p>
                     </div>
                     <dl className="grid grid-cols-2 gap-2 border-t border-border pt-4 text-sm">
                       <div><dt className="text-muted-foreground">Format</dt><dd className="font-medium">Daring & onsite</dd></div>
@@ -59,18 +61,7 @@ export default function Home() {
         <section className="px-5 py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Ditujukan untuk</h2>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {TARGET.map((item) => (
-                <Card key={item.judul} className="border-border/60">
-                  <CardHeader>
-                    <CardTitle className="text-base font-semibold">{item.judul}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{item.deskripsi}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <TopicCards items={TARGET} className="mt-10 lg:grid-cols-3" />
           </div>
         </section>
 
@@ -106,18 +97,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Daftar program</h2>
               <p className="mt-4 text-muted-foreground">Program dapat diikuti secara terpisah atau digabungkan sesuai kebutuhan perusahaan.</p>
             </div>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {PROGRAM.map((item) => (
-                <Card key={item.judul} className="border-border/60">
-                  <CardHeader>
-                    <CardTitle className="text-base font-semibold">{item.judul}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{item.isi}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <TopicCards items={PROGRAM} className="mt-10" />
           </div>
         </section>
 
@@ -153,12 +133,12 @@ export default function Home() {
 
         {/* CTA */}
         <section className="px-5 py-16 md:py-24">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Diskusikan kebutuhan pelatihan Anda</h2>
-            <p className="mt-4 text-muted-foreground">Sampaikan kondisi tim dan sistem pembukuan yang berjalan. Kami akan menyusun rekomendasi program yang sesuai.</p>
-            <a href={SITE.whatsapp} className={buttonVariants({ size: "lg", className: "mt-8 bg-primary text-primary-foreground hover:bg-primary/90" })}>
-              Hubungi via WhatsApp
-            </a>
+          <div className="mx-auto max-w-6xl">
+            <CtaBanner
+              title="Diskusikan kebutuhan pelatihan Anda"
+              description="Sampaikan kondisi tim dan sistem pembukuan yang berjalan. Kami akan menyusun rekomendasi program yang sesuai."
+              action="Hubungi via WhatsApp"
+            />
           </div>
         </section>
       </main>

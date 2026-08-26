@@ -14,7 +14,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         <Link href="#utama" className="group flex items-baseline gap-2" aria-label="Accurate Pro Academy, beranda">
-          <span className="font-mono text-sm font-semibold tracking-[0.12em]">ACCURATE PRO</span>
+          <span className="text-sm font-extrabold tracking-[0.12em]">ACCURATE PRO</span>
           <span className="text-xs text-muted-foreground">{SITE.subline}</span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex" aria-label="Navigasi utama">

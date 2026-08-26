@@ -1,4 +1,16 @@
-export const TRAINING_PRICING = [
+export type TrainingPackage = Readonly<{
+  nama: string;
+  durasi: string;
+  harga: string;
+}>;
+
+export type TrainingPricingGroup = Readonly<{
+  kategori: string;
+  catatan: string;
+  paket: readonly TrainingPackage[];
+}>;
+
+export const TRAINING_PRICING: readonly TrainingPricingGroup[] = [
   {
     kategori: "Accurate Online",
     catatan: "Untuk pembukuan usaha perdagangan dan jasa",
@@ -28,7 +40,13 @@ export const TRAINING_PRICING = [
   },
 ] as const;
 
-export const COURSE_PRICING = [
+export type CoursePriceTier = Readonly<{
+  peserta: string;
+  harga: string;
+  keterangan: string;
+}>;
+
+export const COURSE_PRICING: readonly CoursePriceTier[] = [
   { peserta: "1 orang", harga: "Rp1.500.000", keterangan: "Harga reguler" },
   { peserta: "2 orang", harga: "Rp1.000.000", keterangan: "Per orang" },
   { peserta: "3 orang", harga: "Rp800.000", keterangan: "Per orang" },

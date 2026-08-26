@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { buttonVariants } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { SITE, KEUNGGULAN } from "@/lib/site";
+import { KEUNGGULAN } from "@/lib/site";
 import { ABOUT } from "@/lib/pricing";
-import { ArrowRight } from "lucide-react";
+import { PageIntro } from "@/components/page-intro";
+import { CtaBanner } from "@/components/cta-banner";
 
 export const metadata: Metadata = {
   title: "Tentang Kami",
@@ -13,21 +12,15 @@ export const metadata: Metadata = {
 export default function TentangPage() {
   return (
     <main className="flex-1">
-      <section className="border-b border-border/50 px-5 py-14 md:py-20 sm:px-8">
-        <div className="mx-auto max-w-6xl">
-          <Badge className="bg-primary/10 text-primary hover:bg-primary/20">Tentang Kami</Badge>
-          <h1 className="mt-5 max-w-3xl text-3xl font-extrabold tracking-tight md:text-5xl">
-            Pelatihan Accurate yang dijalankan oleh praktisi pembukuan
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">{ABOUT.intro}</p>
-        </div>
-      </section>
+      <PageIntro
+        eyebrow="Tentang Kami"
+        title="Pelatihan Accurate yang dijalankan oleh akuntan aktif"
+        description={ABOUT.intro}
+      />
 
       <section className="px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.2fr]">
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Cara kami mengajar</h2>
-          </div>
+          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Cara kami mengajar</h2>
           <div className="space-y-6">
             <p className="text-base leading-7 text-muted-foreground">{ABOUT.approach}</p>
             <dl className="grid gap-5 sm:grid-cols-2">
@@ -63,14 +56,12 @@ export default function TentangPage() {
       </section>
 
       <section className="px-5 py-14 md:py-20 sm:px-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-start gap-5 rounded-2xl bg-primary px-6 py-8 text-primary-foreground sm:flex-row sm:items-center sm:justify-between sm:px-10">
-          <div>
-            <p className="text-lg font-bold">Diskusikan kebutuhan tim Anda</p>
-            <p className="mt-1 text-sm text-primary-foreground/70">Kami akan menyusun rekomendasi program setelah memahami kondisi pembukuan yang berjalan.</p>
-          </div>
-          <a href={SITE.whatsapp} className={buttonVariants({ size: "lg", variant: "secondary", className: "gap-1.5 shrink-0" })}>
-            Hubungi via WhatsApp <ArrowRight className="size-4" />
-          </a>
+        <div className="mx-auto max-w-6xl">
+          <CtaBanner
+            title="Diskusikan kebutuhan tim Anda"
+            description="Kami akan menyusun rekomendasi program setelah memahami kondisi pembukuan yang berjalan."
+            action="Hubungi via WhatsApp"
+          />
         </div>
       </section>
     </main>
