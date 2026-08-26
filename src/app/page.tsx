@@ -1,15 +1,14 @@
+import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Header } from "@/components/header";
 import { SITE, TARGET, KEUNGGULAN, PROGRAM, FAQ } from "@/lib/site";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function Home() {
   return (
     <>
-      <Header />
       <main id="utama" className="flex-1">
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-border/50 bg-gradient-to-b from-background to-muted/20 px-5 py-16 md:py-24 lg:py-32">
@@ -17,7 +16,7 @@ export default function Home() {
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
               <div className="flex flex-col justify-center space-y-6">
                 <Badge className="w-fit bg-primary/10 text-primary hover:bg-primary/20">Pelatihan Software Akuntansi</Badge>
-                <h1 className="font-serif text-4xl font-normal leading-tight tracking-tight md:text-5xl lg:text-6xl">
+                <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
                   Kursus Accurate untuk tim yang menangani pembukuan setiap hari
                 </h1>
                 <p className="text-lg text-muted-foreground">
@@ -41,7 +40,7 @@ export default function Home() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
-                      <h3 className="font-serif text-xl font-normal">{PROGRAM[0].judul}</h3>
+                      <h3 className="text-lg font-bold">{PROGRAM[0].judul}</h3>
                       <p className="text-sm text-muted-foreground">{PROGRAM[0].isi}</p>
                     </div>
                     <dl className="grid grid-cols-2 gap-2 border-t border-border pt-4 text-sm">
@@ -59,7 +58,7 @@ export default function Home() {
         {/* Target audience */}
         <section className="px-5 py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <h2 className="font-serif text-3xl font-normal tracking-tight md:text-4xl">Ditujukan untuk</h2>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Ditujukan untuk</h2>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {TARGET.map((item) => (
                 <Card key={item.judul} className="border-border/60">
@@ -80,7 +79,7 @@ export default function Home() {
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-12 lg:grid-cols-2">
               <div>
-                <h2 className="font-serif text-3xl font-normal tracking-tight md:text-4xl">Pendekatan pelatihan</h2>
+                <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Pendekatan pelatihan</h2>
                 <p className="mt-4 text-muted-foreground">
                   Materi tidak disusun sebagai tur fitur. Setiap sesi mengikuti urutan pekerjaan yang dilakukan staf akuntansi, sehingga peserta langsung memahami konteks penggunaannya.
                 </p>
@@ -104,7 +103,7 @@ export default function Home() {
         <section id="program" className="px-5 py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
-              <h2 className="font-serif text-3xl font-normal tracking-tight md:text-4xl">Daftar program</h2>
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Daftar program</h2>
               <p className="mt-4 text-muted-foreground">Program dapat diikuti secara terpisah atau digabungkan sesuai kebutuhan perusahaan.</p>
             </div>
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -122,10 +121,25 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Pricing teaser */}
+        <section className="border-t border-border/50 px-5 pb-16 md:pb-20">
+          <div className="mx-auto flex max-w-6xl flex-col gap-5 rounded-2xl border border-border/60 bg-card px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-10">
+            <div>
+              <p className="text-lg font-bold tracking-tight">Biaya training dan kursus</p>
+              <p className="mt-1 max-w-xl text-sm leading-6 text-muted-foreground">
+                Paket tersedia per durasi untuk Accurate Online dan Desktop, dengan harga kursus per orang yang lebih murah bila mendaftar berkelompok.
+              </p>
+            </div>
+            <Link href="/harga" className={buttonVariants({ variant: "outline", size: "lg", className: "shrink-0 gap-1.5" })}>
+              Lihat harga <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section id="faq" className="border-t border-border/50 bg-muted/10 px-5 py-16 md:py-20">
           <div className="mx-auto max-w-3xl">
-            <h2 className="font-serif text-3xl font-normal tracking-tight md:text-4xl">Pertanyaan yang sering diajukan</h2>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Pertanyaan yang sering diajukan</h2>
             <Accordion className="mt-8 w-full">
               {FAQ.map((item, idx) => (
                 <AccordionItem key={idx} value={`faq-${idx}`}>
@@ -140,7 +154,7 @@ export default function Home() {
         {/* CTA */}
         <section className="px-5 py-16 md:py-24">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-serif text-3xl font-normal tracking-tight md:text-4xl">Diskusikan kebutuhan pelatihan Anda</h2>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Diskusikan kebutuhan pelatihan Anda</h2>
             <p className="mt-4 text-muted-foreground">Sampaikan kondisi tim dan sistem pembukuan yang berjalan. Kami akan menyusun rekomendasi program yang sesuai.</p>
             <a href={SITE.whatsapp} className={buttonVariants({ size: "lg", className: "mt-8 bg-primary text-primary-foreground hover:bg-primary/90" })}>
               Hubungi via WhatsApp
@@ -148,12 +162,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="border-t border-border/50 px-5 py-6">
-        <div className="mx-auto max-w-6xl flex flex-col items-center justify-between gap-2 text-sm text-muted-foreground sm:flex-row">
-          <span className="font-medium text-foreground">{SITE.name}</span>
-          <span>Prototipe — konten menunggu konfirmasi klien</span>
-        </div>
-      </footer>
     </>
   );
 }

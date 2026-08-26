@@ -16,9 +16,9 @@ export const SITE = {
 } as const;
 
 export const NAV = [
-  { label: "Program", href: "#program" },
-  { label: "Tentang", href: "#tentang" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Beranda", href: "/" },
+  { label: "Harga Training", href: "/harga" },
+  { label: "Tentang Kami", href: "/tentang" },
 ] as const;
 
 export const TARGET = [
