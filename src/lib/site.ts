@@ -17,8 +17,10 @@ export const SITE = {
 
 export const NAV = [
   { label: "Beranda", href: "/" },
+  { label: "Program", href: "/program" },
   { label: "Harga Training", href: "/harga" },
   { label: "Tentang Kami", href: "/tentang" },
+  { label: "Kontak", href: "/kontak" },
 ] as const;
 
 /** Shared shape for card-style content blocks (target audience, programs). */

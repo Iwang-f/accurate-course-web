@@ -29,9 +29,9 @@ export default function Home() {
                   <a href={SITE.whatsapp} className={buttonVariants({ size: "lg", className: "bg-primary text-primary-foreground hover:bg-primary/90" })}>
                     Jadwalkan konsultasi <ArrowRight className="ml-2 size-4" />
                   </a>
-                  <a href="#program" className={buttonVariants({ variant: "outline", size: "lg" })}>
+                  <Link href="/program" className={buttonVariants({ variant: "outline", size: "lg" })}>
                     Lihat daftar program
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center justify-center">
@@ -98,6 +98,9 @@ export default function Home() {
               <p className="mt-4 text-muted-foreground">Program dapat diikuti secara terpisah atau digabungkan sesuai kebutuhan perusahaan.</p>
             </div>
             <TopicCards items={PROGRAM} className="mt-10" />
+            <Link href="/program" className={buttonVariants({ variant: "outline", className: "mt-6 gap-2" })}>
+              Lihat detail program <ArrowRight className="size-4" />
+            </Link>
           </div>
         </section>
 
