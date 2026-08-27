@@ -30,6 +30,53 @@ export const TARGET: readonly Topic[] = [
   { judul: "Akuntan Publik", isi: "Perlu memperbarui keterampilan software akuntansi untuk menunjang pekerjaan klien." },
 ] as const;
 
+export const TRAINER = {
+  nama: "Iwang Fadillo",
+  jabatan: "Akuntan Praktisi",
+  deskripsi:
+    "Berpengalaman menangani pembukuan berbagai skala usaha. Pendekatan training berdasarkan transaksi nyata, bukan tutorial menu. Memahami alur akuntansi dari input jurnal hingga laporan keuangan siap saji.",
+  foto: null, // placeholder — ganti URL foto setelah produksi
+} as const;
+
+export type ProgramItem = Readonly<{
+  kategori: "kelas" | "layanan";
+  judul: string;
+  isi: string;
+  durasi: string;
+  harga: string;
+}>;
+
+export const PROGRAM_ITEMS: readonly ProgramItem[] = [
+  {
+    kategori: "kelas",
+    judul: "Accurate Online Fundamental",
+    isi: "Pencatatan transaksi, manajemen stok, piutang/utang, dan penyusunan laporan keuangan dasar menggunakan Accurate Online.",
+    durasi: "2–3 sesi @ 3 jam",
+    harga: "Rp 750.000/orang",
+  },
+  {
+    kategori: "kelas",
+    judul: "Accurate Desktop V5",
+    isi: "Siklus akuntansi penuh: jurnal umum, penyesuaian, penyusutan aset tetap, penutupan periode, dan laporan keuangan.",
+    durasi: "3–4 sesi @ 3 jam",
+    harga: "Rp 1.200.000/orang",
+  },
+  {
+    kategori: "layanan",
+    judul: "Private Training",
+    isi: "Kurikulum disesuaikan dengan kebutuhan perusahaan. Dapat dilaksanakan onsite (Jabodetabek) atau daring durasi ditentukan setelah diskusi kebutuhan.",
+    durasi: "Disesuaikan",
+    harga: "Hubungi untuk penawaran",
+  },
+  {
+    kategori: "layanan",
+    judul: "Konsultasi & Review",
+    isi: "Evaluasi alur kerja Accurate yang telah berjalan, identifikasi perbaikan, serta rekomendasi untuk optimalisasi proses akuntansi.",
+    durasi: "3–5 hari kerja",
+    harga: "Hubungi untuk penawaran",
+  },
+] as const;
+
 export const KEUNGGULAN = [
   { judul: "Kurikulum Berbasis Praktik", isi: "Materi mengikuti alur kerja akuntansi harian, bukan daftar menu software." },
   { judul: "Studi Kasus Perusahaan Indonesia", isi: "Contoh transaksi dan pelaporan yang relevan dengan regulasi dan kebiasaan bisnis lokal." },
