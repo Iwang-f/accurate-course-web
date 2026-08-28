@@ -2,23 +2,25 @@
 
 import type { FormEvent } from "react";
 import { useState } from "react";
+import type { ConsultationInquiry } from "@/lib/consultation";
+import { buildConsultationUrl } from "@/lib/consultation";
 import { SITE, PROGRAM } from "@/lib/site";
 import { PageIntro } from "@/components/page-intro";
 import { buttonVariants } from "@/components/ui/button";
 
+const EMPTY: ConsultationInquiry = { nama: "", perusahaan: "", jumlah: "", program: "", kendala: "" };
+
 export default function KontakPage() {
-  const [nama, setNama] = useState("");
-  const [perusahaan, setPerusahaan] = useState("");
-  const [jumlah, setJumlah] = useState("");
-  const [program, setProgram] = useState("");
-  const [kendala, setKendala] = useState("");
+  const [inquiry, setInquiry] = useState<ConsultationInquiry>(EMPTY);
+
+  function set<K extends keyof ConsultationInquiry>(key: K, value: string) {
+    setInquiry((prev) => ({ ...prev, [key]: value }));
+  }
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const msg = encodeURIComponent(
-      `Halo, saya ingin konsultasi program training Accurate.\n\nNama: ${nama}\nPerusahaan: ${perusahaan}\nJumlah peserta: ${jumlah || "—"}\nProgram diminati: ${program || "—"}\nKendala saat ini: ${kendala || "—"}\n\nMohon info lebih lanjut.`
-    );
-    window.open(`${SITE.whatsapp}?text=${msg}`, "_blank");
+    const url = buildConsultationUrl(inquiry, SITE.whatsapp);
+    window.open(url, "_blank");
   }
 
   return (
@@ -32,14 +34,14 @@ export default function KontakPage() {
       <section className="px-5 py-14 sm:px-8 md:py-16">
         <div className="mx-auto max-w-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <Field label="Nama" value={nama} onChange={setNama} placeholder="Nama lengkap" required />
-            <Field label="Perusahaan" value={perusahaan} onChange={setPerusahaan} placeholder="Nama perusahaan" required />
-            <Field label="Jumlah peserta" value={jumlah} onChange={setJumlah} placeholder="Contoh: 3 orang" />
+            <Field label="Nama" value={inquiry.nama} onChange={(v) => set("nama", v)} placeholder="Nama lengkap" required />
+            <Field label="Perusahaan" value={inquiry.perusahaan} onChange={(v) => set("perusahaan", v)} placeholder="Nama perusahaan" required />
+            <Field label="Jumlah peserta" value={inquiry.jumlah} onChange={(v) => set("jumlah", v)} placeholder="Contoh: 3 orang" />
             <div>
               <label className="mb-1.5 block text-sm font-medium">Program diminati</label>
               <select
-                value={program}
-                onChange={(e) => setProgram(e.target.value)}
+                value={inquiry.program}
+                onChange={(e) => set("program", e.target.value)}
                 className="w-full rounded-lg border border-border/60 bg-background px-4 py-2.5 text-sm outline-none focus:border-primary"
               >
                 <option value="">Pilih program (opsional)</option>
@@ -51,8 +53,8 @@ export default function KontakPage() {
             <div>
               <label className="mb-1.5 block text-sm font-medium">Kendala Accurate saat ini</label>
               <textarea
-                value={kendala}
-                onChange={(e) => setKendala(e.target.value)}
+                value={inquiry.kendala}
+                onChange={(e) => set("kendala", e.target.value)}
                 placeholder="Contoh: laporan keuangan sering tidak balance, tim belum pernah training formal, dll."
                 rows={4}
                 className="w-full resize-y rounded-lg border border-border/60 bg-background px-4 py-2.5 text-sm outline-none focus:border-primary"
