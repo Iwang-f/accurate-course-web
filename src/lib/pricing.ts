@@ -2,6 +2,8 @@ export type TrainingPackage = Readonly<{
   nama: string;
   durasi: string;
   harga: string;
+  /** Marks the recommended tier — rendered with the highlight token. */
+  unggulan?: boolean;
 }>;
 
 export type TrainingPricingGroup = Readonly<{
@@ -16,7 +18,7 @@ export const TRAINING_PRICING: readonly TrainingPricingGroup[] = [
     catatan: "Untuk pembukuan usaha perdagangan dan jasa",
     paket: [
       { nama: "Paham", durasi: "3 hari", harga: "Rp5.000.000" },
-      { nama: "Bisa", durasi: "5 hari", harga: "Rp8.250.000" },
+      { nama: "Bisa", durasi: "5 hari", harga: "Rp8.250.000", unggulan: true },
       { nama: "Terampil", durasi: "10 hari", harga: "Rp16.500.000" },
     ],
   },
@@ -25,7 +27,7 @@ export const TRAINING_PRICING: readonly TrainingPricingGroup[] = [
     catatan: "Untuk tim yang menggunakan versi desktop",
     paket: [
       { nama: "Paham", durasi: "3 hari", harga: "Rp3.450.000" },
-      { nama: "Bisa", durasi: "5 hari", harga: "Rp5.700.000" },
+      { nama: "Bisa", durasi: "5 hari", harga: "Rp5.700.000", unggulan: true },
       { nama: "Terampil", durasi: "10 hari", harga: "Rp11.400.000" },
     ],
   },
@@ -34,7 +36,7 @@ export const TRAINING_PRICING: readonly TrainingPricingGroup[] = [
     catatan: "Materi khusus untuk alur kerja operasional",
     paket: [
       { nama: "Paham", durasi: "5 hari", harga: "Rp7.300.000" },
-      { nama: "Bisa", durasi: "10 hari", harga: "Rp14.400.000" },
+      { nama: "Bisa", durasi: "10 hari", harga: "Rp14.400.000", unggulan: true },
       { nama: "Terampil", durasi: "20 hari", harga: "Rp27.500.000" },
     ],
   },
@@ -44,12 +46,14 @@ export type CoursePriceTier = Readonly<{
   peserta: string;
   harga: string;
   keterangan: string;
+  /** Marks the best-value tier — rendered with the highlight token. */
+  unggulan?: boolean;
 }>;
 
 export const COURSE_PRICING: readonly CoursePriceTier[] = [
   { peserta: "1 orang", harga: "Rp1.500.000", keterangan: "Harga reguler" },
   { peserta: "2 orang", harga: "Rp1.000.000", keterangan: "Per orang" },
-  { peserta: "3 orang", harga: "Rp800.000", keterangan: "Per orang" },
+  { peserta: "3 orang", harga: "Rp800.000", keterangan: "Per orang", unggulan: true },
   { peserta: "5 orang", harga: "Rp700.000", keterangan: "Per orang" },
 ] as const;
 

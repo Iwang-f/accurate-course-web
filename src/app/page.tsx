@@ -3,9 +3,10 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { SITE, TARGET, KEUNGGULAN, PROGRAM, FAQ } from "@/lib/site";
+import { SITE, TARGET, KEUNGGULAN, PROGRAM, FAQ, PAIN, OUTCOMES, TRUST } from "@/lib/site";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { TopicCards } from "@/components/topic-cards";
+import { TestimoniCards } from "@/components/testimoni-cards";
 import { CtaBanner } from "@/components/cta-banner";
 
 export default function Home() {
@@ -33,6 +34,15 @@ export default function Home() {
                     Lihat daftar program
                   </Link>
                 </div>
+                {/* Trust strip — V2 */}
+                <dl className="flex flex-wrap gap-x-8 gap-y-3 pt-2">
+                  {TRUST.map((item) => (
+                    <div key={item.label} className="flex items-baseline gap-2">
+                      <dt className="text-2xl font-extrabold tabular-nums text-primary">{item.angka}</dt>
+                      <dd className="text-sm text-muted-foreground">{item.label}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
               <div className="flex items-center justify-center">
                 <Card className="w-full max-w-md border-primary/20 shadow-lg">
@@ -57,6 +67,19 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Pain points — V2 */}
+        <section className="border-b border-border/50 bg-muted/20 px-5 py-16 md:py-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Situasi yang mungkin sedang Anda hadapi</h2>
+              <p className="mt-4 text-muted-foreground">
+                Banyak tim finance dan akuntan menghadapi kendala serupa. Program ini dirancang untuk menyelesaikannya.
+              </p>
+            </div>
+            <TopicCards items={PAIN} variant="numbered" className="mt-10 lg:grid-cols-3" />
+          </div>
+        </section>
+
         {/* Target audience */}
         <section className="px-5 py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
@@ -65,8 +88,21 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Outcomes — V2 */}
+        <section className="border-y border-border/50 bg-muted/20 px-5 py-16 md:py-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Setelah kursus, Anda akan mampu</h2>
+              <p className="mt-4 text-muted-foreground">
+                Bukan sekadar tahu menu software, tetapi menguasai alur akuntansi yang benar.
+              </p>
+            </div>
+            <TopicCards items={OUTCOMES} variant="check" className="mt-10 lg:grid-cols-3" />
+          </div>
+        </section>
+
         {/* Pendekatan */}
-        <section id="tentang" className="border-y border-border/50 bg-muted/20 px-5 py-16 md:py-20">
+        <section id="tentang" className="px-5 py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-12 lg:grid-cols-2">
               <div>
@@ -91,7 +127,7 @@ export default function Home() {
         </section>
 
         {/* Program */}
-        <section id="program" className="px-5 py-16 md:py-20">
+        <section id="program" className="border-t border-border/50 bg-muted/20 px-5 py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Daftar program</h2>
@@ -104,8 +140,21 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Testimoni — V2 */}
+        <section className="px-5 py-16 md:py-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Apa kata peserta</h2>
+              <p className="mt-4 text-muted-foreground">
+                Pengalaman langsung dari peserta yang telah mengikuti pelatihan.
+              </p>
+            </div>
+            <TestimoniCards />
+          </div>
+        </section>
+
         {/* Pricing teaser */}
-        <section className="border-t border-border/50 px-5 pb-16 md:pb-20">
+        <section className="border-t border-border/50 bg-muted/20 px-5 pb-16 md:pb-20">
           <div className="mx-auto flex max-w-6xl flex-col gap-5 rounded-2xl border border-border/60 bg-card px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-10">
             <div>
               <p className="text-lg font-bold tracking-tight">Biaya training dan kursus</p>
@@ -120,7 +169,7 @@ export default function Home() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="border-t border-border/50 bg-muted/10 px-5 py-16 md:py-20">
+        <section id="faq" className="border-t border-border/50 px-5 py-16 md:py-20">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Pertanyaan yang sering diajukan</h2>
             <Accordion className="mt-8 w-full">

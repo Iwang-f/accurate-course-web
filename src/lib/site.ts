@@ -85,6 +85,99 @@ export const KEUNGGULAN = [
   { judul: "Pendampingan Setelah Kelas", isi: "Peserta mendapatkan akses konsultasi singkat via WhatsApp pasca-training." },
 ] as const;
 
+/** V2 — pain points (dari pola Ultimate Framer Course). */
+export const PAIN: readonly Topic[] = [
+  {
+    judul: "Laporan masih manual di Excel",
+    isi: "Rekap pembukuan makan waktu berjam-jam tiap bulan, rawan salah ketik, dan sulit ditelusuri saat diaudit.",
+  },
+  {
+    judul: "Sudah pakai Accurate tapi asal-asalan",
+    isi: "Software terpasang, tapi alur jurnal, stok, dan closing masih campur aduk sehingga laporan tidak bisa dipercaya.",
+  },
+  {
+    judul: "Ingin menaikkan tarif ke klien",
+    isi: "Tanpa penguasaan software akuntansi yang rapi, sulit membuktikan nilai profesional ke klien atau atasan.",
+  },
+] as const;
+
+/** V2 — outcomes (pola Ultimate Framer Course "By the end you will"). */
+export const OUTCOMES: readonly Topic[] = [
+  {
+    judul: "Menyusun laporan keuangan sendiri",
+    isi: "Input transaksi hingga laporan laba rugi dan neraca siap saji, tanpa tergantung orang lain.",
+  },
+  {
+    judul: "Menutup periode tanpa panik",
+    isi: "Jurnal penyesuaian, penyusutan, dan closing period selesai dengan alur yang benar dan terdokumentasi.",
+  },
+  {
+    judul: "Melayani klien lebih profesional",
+    isi: "Standar pembukuan yang rapi dan bisa diaudit, sehingga tarif dan kredibilitas naik.",
+  },
+] as const;
+
+/** V2 — social proof. PLACEHOLDER: wajib diganti data asli klien sebelum go-live. */
+export const TESTIMONI: readonly {
+  nama: string;
+  jabatan: string;
+  perusahaan: string;
+  isi: string;
+}[] = [
+  {
+    nama: "Nama Peserta 1",
+    jabatan: "Staf Finance",
+    perusahaan: "Perusahaan Dagang",
+    isi: "Sebelumnya laporan bulanan selesai seminggu, sekarang dua hari. Alur yang diajarkan langsung saya pakai di kerjaan.",
+  },
+  {
+    nama: "Nama Peserta 2",
+    jabatan: "Pemilik Usaha",
+    perusahaan: "Toko Retail",
+    isi: "Saya tidak perlu lagi menyewa pihak luar untuk pembukuan. Stok dan piutang sekarang bisa saya pantau sendiri.",
+  },
+  {
+    nama: "Nama Peserta 3",
+    jabatan: "Konsultan Pajak",
+    perusahaan: "Kantor Konsultan",
+    isi: "Materinya berbasis studi kasus nyata, bukan sekadar menu-menu software. Langsung relevan dengan pekerjaan klien saya.",
+  },
+] as const;
+
+/** V2 — silabus per program, dipakai accordion curriculum. */
+export const MODUL: Readonly<Record<string, readonly string[]>> = {
+  "Accurate Online Fundamental": [
+    "Setup perusahaan, data master, dan akun perkiraan",
+    "Transaksi pembelian & penjualan, manajemen stok",
+    "Piutang, utang, dan rekonsiliasi bank",
+    "Penyusunan laporan keuangan dasar",
+  ],
+  "Accurate Desktop V5": [
+    "Siklus akuntansi penuh: jurnal umum & buku besar",
+    "Jurnal penyesuaian dan penyusutan aset tetap",
+    "Penutupan periode dan laporan keuangan",
+    "Review alur kerja dan praktik terbaik",
+  ],
+  "Private Training": [
+    "Kurikulum disesuaikan dengan kebutuhan perusahaan",
+    "Onsite (Jabodetabek) atau daring",
+    "Latihan dengan data perusahaan peserta",
+    "Durasi ditentukan setelah diskusi kebutuhan",
+  ],
+  "Konsultasi dan Review": [
+    "Evaluasi alur kerja Accurate yang berjalan",
+    "Identifikasi kesalahan pencatatan dan perbaikan",
+    "Rekomendasi optimalisasi proses akuntansi",
+  ],
+} as const;
+
+/** V2 — trust strip di hero. PLACEHOLDER angka: wajib ganti data asli sebelum go-live. */
+export const TRUST: readonly { angka: string; label: string }[] = [
+  { angka: "100+", label: "peserta mengikuti pelatihan" },
+  { angka: "5+", label: "perusahaan mitra" },
+  { angka: "98%", label: "peserta puas" },
+] as const;
+
 export const PROGRAM: readonly Topic[] = [
   { judul: "Accurate Online Fundamental", isi: "Mencakup pembuatan data master, transaksi pembelian dan penjualan, manajemen stok, serta penyusunan laporan keuangan dasar." },
   { judul: "Accurate Desktop V5", isi: "Meliputi siklus akuntansi penuh: pencatatan jurnal, penyesuaian, penyusutan aset tetap, hingga closing period." },
