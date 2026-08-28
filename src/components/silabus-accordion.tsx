@@ -1,11 +1,11 @@
 "use client";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { MODUL } from "@/lib/site";
+import { getModul } from "@/lib/site";
 
 /** Curriculum accordion per program. Keys must match PROGRAM / PROGRAM_ITEMS titles. */
 export function SilabusAccordion({ judulProgram }: { judulProgram: string }) {
-  const modul = MODUL[judulProgram];
+  const modul = getModul()[judulProgram];
 
   // Graceful: if no module data for this program, render nothing.
   if (!modul || modul.length === 0) return null;

@@ -5,6 +5,7 @@
  * DRAFT: Beberapa nilai placeholder (WA number, URL) harus diganti sebelum go-live.
  */
 
+/** @deprecated Use getSite() instead. */
 export const SITE = {
   name: "Accurate Pro Academy",
   subline: "akademi",
@@ -15,6 +16,7 @@ export const SITE = {
   isDraft: true,
 } as const;
 
+/** @deprecated Use getNav() instead. */
 export const NAV = [
   { label: "Beranda", href: "/" },
   { label: "Program", href: "/program" },
@@ -26,12 +28,14 @@ export const NAV = [
 /** Shared shape for card-style content blocks (target audience, programs). */
 export type Topic = Readonly<{ judul: string; isi: string }>;
 
+/** @deprecated Use getTargets() instead. */
 export const TARGET: readonly Topic[] = [
   { judul: "Pemilik Usaha", isi: "Membutuhkan laporan keuangan yang rapi dan terstruktur tanpa harus menjadi akuntan." },
   { judul: "Tim Finance", isi: "Ingin memperkuat kompetensi Accurate secara teknis sekaligus konseptual." },
   { judul: "Akuntan Publik", isi: "Perlu memperbarui keterampilan software akuntansi untuk menunjang pekerjaan klien." },
 ] as const;
 
+/** @deprecated Use getTrainer() instead. */
 export const TRAINER = {
   nama: "Iwang Fadillo",
   jabatan: "Akuntan Praktisi",
@@ -48,6 +52,7 @@ export type ProgramItem = Readonly<{
   harga: string;
 }>;
 
+/** @deprecated Use getProgramItems() instead. */
 export const PROGRAM_ITEMS: readonly ProgramItem[] = [
   {
     kategori: "kelas",
@@ -72,13 +77,14 @@ export const PROGRAM_ITEMS: readonly ProgramItem[] = [
   },
   {
     kategori: "layanan",
-    judul: "Konsultasi & Review",
+    judul: "Konsultasi dan Review",
     isi: "Evaluasi alur kerja Accurate yang telah berjalan, identifikasi perbaikan, serta rekomendasi untuk optimalisasi proses akuntansi.",
     durasi: "3–5 hari kerja",
     harga: "Hubungi untuk penawaran",
   },
 ] as const;
 
+/** @deprecated Use getKeunggulan() instead. */
 export const KEUNGGULAN = [
   { judul: "Kurikulum Berbasis Praktik", isi: "Materi mengikuti alur kerja akuntansi harian, bukan daftar menu software." },
   { judul: "Studi Kasus Perusahaan Indonesia", isi: "Contoh transaksi dan pelaporan yang relevan dengan regulasi dan kebiasaan bisnis lokal." },
@@ -86,6 +92,7 @@ export const KEUNGGULAN = [
 ] as const;
 
 /** V2 — pain points (dari pola Ultimate Framer Course). */
+/** @deprecated Use getPain() instead. */
 export const PAIN: readonly Topic[] = [
   {
     judul: "Laporan masih manual di Excel",
@@ -102,6 +109,7 @@ export const PAIN: readonly Topic[] = [
 ] as const;
 
 /** V2 — outcomes (pola Ultimate Framer Course "By the end you will"). */
+/** @deprecated Use getOutcomes() instead. */
 export const OUTCOMES: readonly Topic[] = [
   {
     judul: "Menyusun laporan keuangan sendiri",
@@ -118,6 +126,7 @@ export const OUTCOMES: readonly Topic[] = [
 ] as const;
 
 /** V2 — social proof. PLACEHOLDER: wajib diganti data asli klien sebelum go-live. */
+/** @deprecated Use getTestimoni() instead. */
 export const TESTIMONI: readonly {
   nama: string;
   jabatan: string;
@@ -145,6 +154,7 @@ export const TESTIMONI: readonly {
 ] as const;
 
 /** V2 — silabus per program, dipakai accordion curriculum. */
+/** @deprecated Use getModul() instead. */
 export const MODUL: Readonly<Record<string, readonly string[]>> = {
   "Accurate Online Fundamental": [
     "Setup perusahaan, data master, dan akun perkiraan",
@@ -172,12 +182,14 @@ export const MODUL: Readonly<Record<string, readonly string[]>> = {
 } as const;
 
 /** V2 — trust strip di hero. PLACEHOLDER angka: wajib ganti data asli sebelum go-live. */
+/** @deprecated Use getTrust() instead. */
 export const TRUST: readonly { angka: string; label: string }[] = [
   { angka: "100+", label: "peserta mengikuti pelatihan" },
   { angka: "5+", label: "perusahaan mitra" },
   { angka: "98%", label: "peserta puas" },
 ] as const;
 
+/** @deprecated Use getPrograms() instead. */
 export const PROGRAM: readonly Topic[] = [
   { judul: "Accurate Online Fundamental", isi: "Mencakup pembuatan data master, transaksi pembelian dan penjualan, manajemen stok, serta penyusunan laporan keuangan dasar." },
   { judul: "Accurate Desktop V5", isi: "Meliputi siklus akuntansi penuh: pencatatan jurnal, penyesuaian, penyusutan aset tetap, hingga closing period." },
@@ -185,6 +197,7 @@ export const PROGRAM: readonly Topic[] = [
   { judul: "Konsultasi dan Review", isi: "Evaluasi terhadap alur kerja Accurate yang telah berjalan, disertai rekomendasi perbaikan." },
 ] as const;
 
+/** @deprecated Use getFaq() instead. */
 export const FAQ = [
   { tanya: "Apakah program ini cocok untuk pemula yang belum pernah menggunakan Accurate?", jawab: "Cocok. Modul fundamental dirancang untuk peserta tanpa pengalaman sebelumnya. Instruktur akan membimbing dari navigasi dasar hingga peserta mampu melakukan pencatatan secara mandiri." },
   { tanya: "Bagaimana pelaksanaan training: online atau offline?", jawab: "Kelas reguler dilaksanakan secara daring. Untuk Private Training, format dapat disesuaikan: daring atau onsite di perusahaan." },
@@ -192,3 +205,91 @@ export const FAQ = [
   { tanya: "Apakah peserta dapat menggunakan data perusahaannya saat latihan?", jawab: "Sangat dianjurkan, khususnya untuk Private Training. Latihan dengan data nyata membuat hasil langsung dapat diterapkan." },
   { tanya: "Apa yang membedakan Accurate Pro Academy dari lembaga training Accurate lain?", jawab: "Instruktur adalah akuntan yang aktif menangani pembukuan klien. Pendekatan yang diajarkan tidak hanya teknis software, tetapi juga pemahaman akuntansi yang mendasarinya." },
 ] as const;
+
+/* ------------------------------------------------------------------ *
+ * Accessor seam
+ *
+ * Callers cross this interface instead of importing individual data
+ * constants. Each accessor documents the query it answers; the raw
+ * arrays above stay internal to this module.
+ * ------------------------------------------------------------------ */
+
+/** Site-wide configuration (brand, URL, WhatsApp, draft flag). */
+export function getSite() {
+  return SITE;
+}
+
+/** Navigation items for header and footer, in display order. */
+export function getNav() {
+  return NAV;
+}
+
+/** Audience segments the courses target. */
+export function getTargets() {
+  return TARGET;
+}
+
+/** Trainer profile for the about/program pages. */
+export function getTrainer() {
+  return TRAINER;
+}
+
+/** Full program catalogue, mixing classes and services. */
+export function getProgramItems() {
+  return PROGRAM_ITEMS;
+}
+
+/** Program catalogue filtered to classes only (kategori === "kelas"). */
+export function getClasses() {
+  return PROGRAM_ITEMS.filter((item) => item.kategori === "kelas");
+}
+
+/** Program catalogue filtered to services only (kategori === "layanan"). */
+export function getServices() {
+  return PROGRAM_ITEMS.filter((item) => item.kategori === "layanan");
+}
+
+/** Teaching differentiators, used by the home approach section. */
+export function getKeunggulan() {
+  return KEUNGGULAN;
+}
+
+/** Pain points the course addresses. */
+export function getPain() {
+  return PAIN;
+}
+
+/** Outcomes a participant can expect after the course. */
+export function getOutcomes() {
+  return OUTCOMES;
+}
+
+/** Social proof testimonials. PLACEHOLDER — replace with real data before go-live. */
+export function getTestimoni() {
+  return TESTIMONI;
+}
+
+/** Curriculum module lists, keyed by program title. */
+export function getModul() {
+  return MODUL;
+}
+
+/** Trust-strip statistics. PLACEHOLDER — replace with real data before go-live. */
+export function getTrust() {
+  return TRUST;
+}
+
+/** Short-form program list used for cards and dropdowns. */
+export function getPrograms() {
+  return PROGRAM;
+}
+
+/** Frequently asked questions. */
+export function getFaq() {
+  return FAQ;
+}
+
+/** The class most commonly taken (first class in the catalogue), for hero highlights. */
+export function getFeaturedClass() {
+  return PROGRAM_ITEMS.find((item) => item.kategori === "kelas");
+}

@@ -4,7 +4,7 @@ import type { FormEvent } from "react";
 import { useState } from "react";
 import type { ConsultationInquiry } from "@/lib/consultation";
 import { buildConsultationUrl } from "@/lib/consultation";
-import { SITE, PROGRAM } from "@/lib/site";
+import { getSite, getPrograms } from "@/lib/site";
 import { PageIntro } from "@/components/page-intro";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -19,7 +19,7 @@ export default function KontakPage() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const url = buildConsultationUrl(inquiry, SITE.whatsapp);
+    const url = buildConsultationUrl(inquiry, getSite().whatsapp);
     window.open(url, "_blank");
   }
 
@@ -45,7 +45,7 @@ export default function KontakPage() {
                 className="w-full rounded-lg border border-border/60 bg-background px-4 py-2.5 text-sm outline-none focus:border-primary"
               >
                 <option value="">Pilih program (opsional)</option>
-                {PROGRAM.map((p) => (
+                {getPrograms().map((p) => (
                   <option key={p.judul} value={p.judul}>{p.judul}</option>
                 ))}
               </select>

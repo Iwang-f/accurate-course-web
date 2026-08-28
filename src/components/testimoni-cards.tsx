@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { TESTIMONI } from "@/lib/site";
+import { getTestimoni } from "@/lib/site";
 
 /** Initials avatar — no photo assets required. */
 function initials(nama: string): string {
@@ -14,7 +14,7 @@ function initials(nama: string): string {
 export function TestimoniCards() {
   return (
     <div className="mt-10 grid gap-5 md:grid-cols-3">
-      {TESTIMONI.map((t) => (
+      {getTestimoni().map((t) => (
         <Card key={t.nama} className="border-border/60">
           <CardContent className="flex h-full flex-col gap-5 px-6 py-6">
             <p className="flex-1 text-sm leading-6 text-muted-foreground">&ldquo;{t.isi}&rdquo;</p>

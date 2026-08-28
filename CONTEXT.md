@@ -24,7 +24,9 @@ The structured data a potential participant submits through the contact form. Sh
 ## Arsitektur
 
 ### Accessor seam
-Pure functions in `pricing.ts` that mediate access to raw pricing data arrays. Callers use `getTrainingPricing()`, `getRecommendedPackage()`, etc. instead of array filter chains. Tested via `pricing.test.ts`.
+Pure functions in `site.ts` and `pricing.ts` that mediate access to raw data arrays. Callers use `getPrograms()`, `getTrainingPricing()`, `getRecommendedPackage()`, etc. instead of array filter chains. Tested via `site.test.ts` and `pricing.test.ts`.
+
+**Cross-module invariant**: every `PROGRAM_ITEMS` title must have a matching key in `MODUL` (the silabus accordion renders nothing otherwise), and the `PROGRAM` card list must have the same titles as `PROGRAM_ITEMS`.
 
 ### File layout
 ```

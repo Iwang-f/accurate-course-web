@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { SITE } from "@/lib/site";
+import { getSite } from "@/lib/site";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+
+const SITE = getSite();
 
 const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin"], display: "swap" });
 
