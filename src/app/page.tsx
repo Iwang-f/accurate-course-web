@@ -3,13 +3,15 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { SITE, TARGET, KEUNGGULAN, PROGRAM, FAQ, PAIN, OUTCOMES, TRUST } from "@/lib/site";
+import { getSite, getTargets, getKeunggulan, getPrograms, getFaq, getPain, getOutcomes, getTrust } from "@/lib/site";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { TopicCards } from "@/components/topic-cards";
 import { TestimoniCards } from "@/components/testimoni-cards";
 import { CtaBanner } from "@/components/cta-banner";
 
 export default function Home() {
+  const site = getSite();
+  const programs = getPrograms();
   return (
     <>
       <main id="utama" className="flex-1">
@@ -27,7 +29,7 @@ export default function Home() {
                   Peserta mempelajari pengoperasian Accurate sekaligus logika pencatatan yang mendasarinya.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <a href={SITE.whatsapp} className={buttonVariants({ size: "lg", className: "bg-primary text-primary-foreground hover:bg-primary/90" })}>
+                  <a href={site.whatsapp} className={buttonVariants({ size: "lg", className: "bg-primary text-primary-foreground hover:bg-primary/90" })}>
                     Jadwalkan konsultasi <ArrowRight className="ml-2 size-4" />
                   </a>
                   <Link href="/program" className={buttonVariants({ variant: "outline", size: "lg" })}>
@@ -36,7 +38,7 @@ export default function Home() {
                 </div>
                 {/* Trust strip — V2 */}
                 <dl className="flex flex-wrap gap-x-8 gap-y-3 pt-2">
-                  {TRUST.map((item) => (
+                  {getTrust().map((item) => (
                     <div key={item.label} className="flex items-baseline gap-2">
                       <dt className="text-2xl font-extrabold tabular-nums text-primary">{item.angka}</dt>
                       <dd className="text-sm text-muted-foreground">{item.label}</dd>
@@ -52,8 +54,8 @@ export default function Home() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
-                      <h3 className="text-lg font-bold">{PROGRAM.at(0)?.judul}</h3>
-                      <p className="text-sm text-muted-foreground">{PROGRAM.at(0)?.isi}</p>
+                      <h3 className="text-lg font-bold">{programs.at(0)?.judul}</h3>
+                      <p className="text-sm text-muted-foreground">{programs.at(0)?.isi}</p>
                     </div>
                     <dl className="grid grid-cols-2 gap-2 border-t border-border pt-4 text-sm">
                       <div><dt className="text-muted-foreground">Format</dt><dd className="font-medium">Daring & onsite</dd></div>
@@ -76,7 +78,7 @@ export default function Home() {
                 Banyak tim finance dan akuntan menghadapi kendala serupa. Program ini dirancang untuk menyelesaikannya.
               </p>
             </div>
-            <TopicCards items={PAIN} variant="numbered" className="mt-10 lg:grid-cols-3" />
+            <TopicCards items={getPain()} variant="numbered" className="mt-10 lg:grid-cols-3" />
           </div>
         </section>
 
@@ -84,7 +86,7 @@ export default function Home() {
         <section className="px-5 py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Ditujukan untuk</h2>
-            <TopicCards items={TARGET} className="mt-10 lg:grid-cols-3" />
+            <TopicCards items={getTargets()} className="mt-10 lg:grid-cols-3" />
           </div>
         </section>
 
@@ -97,7 +99,7 @@ export default function Home() {
                 Bukan sekadar tahu menu software, tetapi menguasai alur akuntansi yang benar.
               </p>
             </div>
-            <TopicCards items={OUTCOMES} variant="check" className="mt-10 lg:grid-cols-3" />
+            <TopicCards items={getOutcomes()} variant="check" className="mt-10 lg:grid-cols-3" />
           </div>
         </section>
 
@@ -112,7 +114,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="space-y-6">
-                {KEUNGGULAN.map((item) => (
+                {getKeunggulan().map((item) => (
                   <div key={item.judul} className="flex gap-4">
                     <CheckCircle2 className="mt-1 size-5 flex-shrink-0 text-primary" />
                     <div>
@@ -133,7 +135,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Daftar program</h2>
               <p className="mt-4 text-muted-foreground">Program dapat diikuti secara terpisah atau digabungkan sesuai kebutuhan perusahaan.</p>
             </div>
-            <TopicCards items={PROGRAM} className="mt-10" />
+            <TopicCards items={programs} className="mt-10" />
             <Link href="/program" className={buttonVariants({ variant: "outline", className: "mt-6 gap-2" })}>
               Lihat detail program <ArrowRight className="size-4" />
             </Link>
@@ -173,7 +175,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Pertanyaan yang sering diajukan</h2>
             <Accordion className="mt-8 w-full">
-              {FAQ.map((item, idx) => (
+              {getFaq().map((item, idx) => (
                 <AccordionItem key={idx} value={`faq-${idx}`}>
                   <AccordionTrigger className="text-left text-base font-medium">{item.tanya}</AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">{item.jawab}</AccordionContent>

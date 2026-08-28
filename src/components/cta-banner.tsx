@@ -1,5 +1,5 @@
 import { buttonVariants } from "@/components/ui/button";
-import { SITE } from "@/lib/site";
+import { getSite } from "@/lib/site";
 import { ArrowRight } from "lucide-react";
 
 type CtaBannerProps = {
@@ -15,7 +15,7 @@ export function CtaBanner({ title, description, action = "Konsultasi via WhatsAp
         <p className="text-lg font-bold tracking-tight">{title}</p>
         <p className="mt-1 max-w-xl text-sm leading-6 text-primary-foreground/70">{description}</p>
       </div>
-      <a href={SITE.whatsapp} className={buttonVariants({ size: "lg", variant: "secondary", className: "shrink-0 gap-1.5" })}>
+      <a href={getSite().whatsapp} className={buttonVariants({ size: "lg", variant: "secondary", className: "shrink-0 gap-1.5" })}>
         {action} <ArrowRight className="size-4" />
       </a>
     </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { KEUNGGULAN, TRAINER } from "@/lib/site";
+import { getKeunggulan, getTrainer } from "@/lib/site";
 import { ABOUT } from "@/lib/pricing";
 import { PageIntro } from "@/components/page-intro";
 import { CtaBanner } from "@/components/cta-banner";
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function TentangPage() {
+  const TRAINER = getTrainer();
   return (
     <main className="flex-1">
       <PageIntro
@@ -45,7 +46,7 @@ export default function TentangPage() {
           <div className="space-y-6">
             <p className="text-base leading-7 text-muted-foreground">{ABOUT.approach}</p>
             <dl className="grid gap-5 sm:grid-cols-2">
-              {KEUNGGULAN.map((k) => (
+              {getKeunggulan().map((k) => (
                 <div key={k.judul} className="rounded-xl border border-border/60 bg-card px-5 py-5">
                   <dt className="text-sm font-semibold">{k.judul}</dt>
                   <dd className="mt-2 text-sm leading-6 text-muted-foreground">{k.isi}</dd>
