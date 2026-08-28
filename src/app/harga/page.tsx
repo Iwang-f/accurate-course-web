@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { TRAINING_PRICING, COURSE_PRICING, TERMS } from "@/lib/pricing";
+import { getCoursePricing, getTerms } from "@/lib/pricing";
+import type { CoursePriceTier } from "@/lib/pricing";
 import { PageIntro } from "@/components/page-intro";
 import { CtaBanner } from "@/components/cta-banner";
 import { Badge } from "@/components/ui/badge";
@@ -23,7 +24,7 @@ export default function HargaPage() {
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Biaya training per paket</h2>
           <p className="mt-2 text-sm text-muted-foreground">Pilih level sesuai kebutuhan tim: Paham, Bisa, atau Terampil.</p>
-          <PricingCards groups={TRAINING_PRICING} />
+          <PricingCards />
         </div>
       </section>
 
@@ -33,7 +34,7 @@ export default function HargaPage() {
           <p className="mt-2 text-sm text-muted-foreground">Diskon berlaku untuk pendaftaran berkelompok pada waktu yang sama.</p>
           <div className="mt-8 overflow-hidden rounded-xl border border-border/60 bg-card">
             <div className="grid grid-cols-1 overflow-x-auto sm:grid-cols-2 lg:grid-cols-4">
-              {COURSE_PRICING.map((item) => (
+              {getCoursePricing().map((item: CoursePriceTier) => (
                 <div
                   key={item.peserta}
                   className={`relative border-b border-border/50 px-6 py-5 sm:border-b-0 sm:border-r last:border-r-0 ${
@@ -61,7 +62,7 @@ export default function HargaPage() {
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Ketentuan pelaksanaan</h2>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {TERMS.map((t) => (
+            {getTerms().map((t: string) => (
               <li key={t} className="flex items-start gap-3 rounded-lg border border-border/60 bg-card px-5 py-4 text-sm text-muted-foreground">
                 <span className="mt-1 size-1.5 shrink-0 rounded-full bg-primary" />
                 {t}
