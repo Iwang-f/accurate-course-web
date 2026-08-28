@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { TRAINING_PRICING, COURSE_PRICING, TERMS } from "@/lib/pricing";
 import { PageIntro } from "@/components/page-intro";
 import { CtaBanner } from "@/components/cta-banner";
+import { Badge } from "@/components/ui/badge";
 import { PricingCards } from "@/components/pricing-cards";
 
 export const metadata: Metadata = {
@@ -33,7 +34,15 @@ export default function HargaPage() {
           <div className="mt-8 overflow-hidden rounded-xl border border-border/60 bg-card">
             <div className="grid grid-cols-1 overflow-x-auto sm:grid-cols-2 lg:grid-cols-4">
               {COURSE_PRICING.map((item) => (
-                <div key={item.peserta} className="border-b border-border/50 px-6 py-5 sm:border-b-0 sm:border-r last:border-r-0">
+                <div
+                  key={item.peserta}
+                  className={`relative border-b border-border/50 px-6 py-5 sm:border-b-0 sm:border-r last:border-r-0 ${
+                    item.unggulan ? "bg-highlight/10" : ""
+                  }`}
+                >
+                  {item.unggulan && (
+                    <Badge className="absolute right-4 top-4 bg-highlight text-highlight-foreground hover:bg-highlight/90">Terbaik</Badge>
+                  )}
                   <p className="text-sm text-muted-foreground">{item.peserta}</p>
                   <p className="mt-1 text-lg font-bold tabular-nums text-primary">{item.harga}</p>
                   <p className="text-xs text-muted-foreground">{item.keterangan}</p>
@@ -41,6 +50,10 @@ export default function HargaPage() {
               ))}
             </div>
           </div>
+          <p className="mt-4 flex items-start gap-2 text-sm text-muted-foreground">
+            <span className="mt-1 size-1.5 shrink-0 rounded-full bg-primary" />
+            Kepuasan dijamin: bila materi tidak sesuai kebutuhan, diskusikan dengan kami sebelum sesi kedua untuk penyesuaian atau pengembalian.
+          </p>
         </div>
       </section>
 

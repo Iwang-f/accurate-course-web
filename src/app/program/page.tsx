@@ -5,6 +5,7 @@ import { CtaBanner } from "@/components/cta-banner";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SilabusAccordion } from "@/components/silabus-accordion";
 import { PROGRAM_ITEMS, TRAINER } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function ProgramPage() {
   const classes = PROGRAM_ITEMS.filter((item) => item.kategori === "kelas");
   const services = PROGRAM_ITEMS.filter((item) => item.kategori === "layanan");
+  const featuredClass = "Accurate Online Fundamental";
 
   return (
     <main className="flex-1">
@@ -23,7 +25,29 @@ export default function ProgramPage() {
         <div className="mx-auto max-w-6xl">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Kelas utama</p>
           <div className="mt-5 grid gap-5 md:grid-cols-2">
-            {classes.map((item) => <ProgramCard key={item.judul} item={item} />)}
+            {classes.map((item) => (
+              <div key={item.judul} className={item.judul === featuredClass ? "rounded-xl" : ""}>
+                <Card className={`h-full border-border/60 ${item.judul === featuredClass ? "border-primary/30 ring-1 ring-primary/20" : ""}`}>
+                  <CardHeader>
+                    <div className="flex items-center gap-2">
+                      <CardTitle className="text-xl">{item.judul}</CardTitle>
+                      {item.judul === featuredClass && (
+                        <Badge className="bg-highlight text-highlight-foreground hover:bg-highlight/90">Terpopuler</Badge>
+                      )}
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="leading-7 text-muted-foreground">{item.isi}</p>
+                    <SilabusAccordion judulProgram={item.judul} />
+                    <div className="mt-6 flex flex-wrap gap-3 text-sm">
+                      <span className="rounded-full bg-muted px-3 py-1">{item.durasi}</span>
+                      <span className="rounded-full bg-primary/10 px-3 py-1 font-semibold text-primary">{item.harga}</span>
+                    </div>
+                    <a href="/kontak" className={buttonVariants({ variant: "outline", className: "mt-6 gap-2" })}>Tanya program <ArrowRight className="size-4" /></a>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -51,5 +75,5 @@ export default function ProgramPage() {
 }
 
 function ProgramCard({ item }: { item: (typeof PROGRAM_ITEMS)[number] }) {
-  return <Card className="border-border/60"><CardHeader><CardTitle className="text-xl">{item.judul}</CardTitle></CardHeader><CardContent><p className="leading-7 text-muted-foreground">{item.isi}</p><div className="mt-6 flex flex-wrap gap-3 text-sm"><span className="rounded-full bg-muted px-3 py-1">{item.durasi}</span><span className="rounded-full bg-primary/10 px-3 py-1 font-semibold text-primary">{item.harga}</span></div><a href="/kontak" className={buttonVariants({ variant: "outline", className: "mt-6 gap-2" })}>Tanya program <ArrowRight className="size-4" /></a></CardContent></Card>;
+  return <Card className="h-full border-border/60"><CardHeader><CardTitle className="text-xl">{item.judul}</CardTitle></CardHeader><CardContent><p className="leading-7 text-muted-foreground">{item.isi}</p><SilabusAccordion judulProgram={item.judul} /><div className="mt-6 flex flex-wrap gap-3 text-sm"><span className="rounded-full bg-muted px-3 py-1">{item.durasi}</span><span className="rounded-full bg-primary/10 px-3 py-1 font-semibold text-primary">{item.harga}</span></div><a href="/kontak" className={buttonVariants({ variant: "outline", className: "mt-6 gap-2" })}>Tanya program <ArrowRight className="size-4" /></a></CardContent></Card>;
 }

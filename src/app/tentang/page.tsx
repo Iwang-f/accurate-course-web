@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { KEUNGGULAN } from "@/lib/site";
+import { KEUNGGULAN, TRAINER } from "@/lib/site";
 import { ABOUT } from "@/lib/pricing";
 import { PageIntro } from "@/components/page-intro";
 import { CtaBanner } from "@/components/cta-banner";
+import { Badge } from "@/components/ui/badge";
+import { TestimoniCards } from "@/components/testimoni-cards";
 
 export const metadata: Metadata = {
   title: "Tentang Kami",
@@ -18,7 +20,26 @@ export default function TentangPage() {
         description={ABOUT.intro}
       />
 
+      {/* Trainer — V2 */}
       <section className="px-5 py-14 md:py-16 sm:px-8">
+        <div className="mx-auto grid max-w-6xl gap-8 rounded-2xl border border-border/60 bg-card p-6 sm:p-10 md:grid-cols-[auto_1fr] md:items-center">
+          <div className="flex size-24 items-center justify-center rounded-full bg-primary text-3xl font-bold text-primary-foreground">
+            {TRAINER.foto ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={TRAINER.foto} alt={TRAINER.nama} className="size-24 rounded-full object-cover" />
+            ) : (
+              "IF"
+            )}
+          </div>
+          <div>
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/20">{TRAINER.jabatan}</Badge>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight">{TRAINER.nama}</h2>
+            <p className="mt-3 max-w-2xl leading-7 text-muted-foreground">{TRAINER.deskripsi}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border/50 px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.2fr]">
           <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Cara kami mengajar</h2>
           <div className="space-y-6">
@@ -52,6 +73,17 @@ export default function TentangPage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Testimoni — V2 */}
+      <section className="px-5 py-14 md:py-16 sm:px-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Apa kata peserta</h2>
+            <p className="mt-3 text-muted-foreground">Pengalaman langsung dari peserta yang telah mengikuti pelatihan.</p>
+          </div>
+          <TestimoniCards />
         </div>
       </section>
 
