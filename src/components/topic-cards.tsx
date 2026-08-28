@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
-
-type Topic = Readonly<{ judul: string; isi: string }>;
+import type { Topic } from "@/lib/site";
 
 /**
  * Card grid for short titled blocks.
