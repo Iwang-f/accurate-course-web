@@ -12,6 +12,7 @@ export type TrainingPricingGroup = Readonly<{
   paket: readonly TrainingPackage[];
 }>;
 
+/** @deprecated Use getTrainingPricing() instead. */
 export const TRAINING_PRICING: readonly TrainingPricingGroup[] = [
   {
     kategori: "Accurate Online",
@@ -50,6 +51,7 @@ export type CoursePriceTier = Readonly<{
   unggulan?: boolean;
 }>;
 
+/** @deprecated Use getCoursePricing() instead. */
 export const COURSE_PRICING: readonly CoursePriceTier[] = [
   { peserta: "1 orang", harga: "Rp1.500.000", keterangan: "Harga reguler" },
   { peserta: "2 orang", harga: "Rp1.000.000", keterangan: "Per orang" },
@@ -57,12 +59,57 @@ export const COURSE_PRICING: readonly CoursePriceTier[] = [
   { peserta: "5 orang", harga: "Rp700.000", keterangan: "Per orang" },
 ] as const;
 
+/** @deprecated Use getTerms() instead. */
 export const TERMS = [
   "Durasi maksimal training 8 jam per hari, termasuk istirahat.",
   "Training pada akhir pekan atau hari libur dikenakan biaya tambahan.",
   "Biaya onsite di luar Jabodetabek dihitung berdasarkan lokasi dan kebutuhan akomodasi.",
   "Harga dan jadwal dapat berubah setelah kebutuhan training dikonfirmasi.",
 ] as const;
+
+/* ------------------------------------------------------------------ *
+ * Accessor seam
+ *
+ * Callers cross this interface instead of reaching into the raw arrays
+ * above. Every pricing query lives here, so the filter logic is written
+ * and tested once rather than repeated per call site.
+ * ------------------------------------------------------------------ */
+
+/** All training pricing groups, in display order. */
+export function getTrainingPricing(): readonly TrainingPricingGroup[] {
+  return TRAINING_PRICING;
+}
+
+/** The recommended package for one category, or undefined if none is flagged. */
+export function getRecommendedPackage(kategori: string): TrainingPackage | undefined {
+  return TRAINING_PRICING.find((group) => group.kategori === kategori)?.paket.find((p) => p.unggulan);
+}
+
+/** Every recommended package, paired with the category it belongs to. */
+export function getRecommendedPackages(): readonly Readonly<{
+  kategori: string;
+  paket: TrainingPackage;
+}>[] {
+  return TRAINING_PRICING.flatMap((group) => {
+    const paket = group.paket.find((p) => p.unggulan);
+    return paket ? [{ kategori: group.kategori, paket }] : [];
+  });
+}
+
+/** All per-person course price tiers, cheapest last. */
+export function getCoursePricing(): readonly CoursePriceTier[] {
+  return COURSE_PRICING;
+}
+
+/** The best-value per-person tier, or undefined if none is flagged. */
+export function getBestValueTier(): CoursePriceTier | undefined {
+  return COURSE_PRICING.find((tier) => tier.unggulan);
+}
+
+/** Terms that apply to every training engagement. */
+export function getTerms(): readonly string[] {
+  return TERMS;
+}
 
 export const ABOUT = {
   intro: "Accurate Pro Academy menyediakan pelatihan software akuntansi untuk pemilik usaha, tim finance, dan akuntan yang ingin membangun proses pembukuan lebih teratur.",

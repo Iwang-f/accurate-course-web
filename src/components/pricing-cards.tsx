@@ -1,8 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import type { TrainingPricingGroup } from "@/lib/pricing";
+import { getTrainingPricing } from "@/lib/pricing";
 
-export function PricingCards({ groups }: { groups: readonly TrainingPricingGroup[] }) {
+export function PricingCards() {
+  const groups = getTrainingPricing();
   return (
     <div className="mt-10 grid gap-6 lg:grid-cols-3">
       {groups.map((group) => (

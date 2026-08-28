@@ -8,8 +8,9 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "check": "npm run typecheck && npm run lint && npm run build",
-    "clean": "rm -rf .next node_modules tsconfig.tsbuildinfo"
+    "check": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "clean": "rm -rf .next node_modules tsconfig.tsbuildinfo",
+    "test": "node --test --import tsx src/lib/*.test.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -31,6 +32,7 @@
     "eslint-config-next": "16.3.2",
     "postcss": "^8.5.26",
     "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   }
 }
