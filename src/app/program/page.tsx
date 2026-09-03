@@ -46,7 +46,7 @@ export default function ProgramPage() {
           <div className="flex size-24 items-center justify-center rounded-full bg-primary text-3xl font-bold text-primary-foreground">IF</div>
           <div>
             <Badge className="bg-primary/10 text-primary hover:bg-primary/20">{TRAINER.jabatan}</Badge>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight">{TRAINER.nama}</h2>
+            <h2 className="font-display mt-3 text-2xl font-semibold tracking-tight">{TRAINER.nama}</h2>
             <p className="mt-3 max-w-2xl leading-7 text-muted-foreground">{TRAINER.deskripsi}</p>
           </div>
         </div>

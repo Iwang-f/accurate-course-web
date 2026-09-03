@@ -10,7 +10,7 @@ export function PricingCards() {
         <Card key={group.kategori} className="border-border/60">
           <CardContent className="p-0">
             <div className="border-b border-border/60 px-6 py-5">
-              <h3 className="text-lg font-bold">{group.kategori}</h3>
+              <h3 className="font-display text-lg font-semibold">{group.kategori}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{group.catatan}</p>
             </div>
             <div className="divide-y divide-border/60">

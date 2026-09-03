@@ -211,7 +211,7 @@ export default function Home() {
       <section className="border-t border-border/50 bg-muted/20 px-5 pb-16 md:pb-20">
         <div className="mx-auto flex max-w-6xl flex-col gap-5 rounded-2xl border border-border/60 bg-card px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-10">
           <div>
-            <p className="text-lg font-bold tracking-tight">Biaya training dan kursus</p>
+            <p className="font-display text-lg font-semibold tracking-tight">Biaya training dan kursus</p>
             <p className="mt-1 max-w-xl text-sm leading-6 text-muted-foreground">
               Paket tersedia per durasi untuk Accurate Online dan Desktop, dengan harga kursus per orang yang lebih murah bila mendaftar berkelompok.
             </p>

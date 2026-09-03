@@ -34,7 +34,7 @@ export default function TentangPage() {
           </div>
           <div>
             <Badge className="bg-primary/10 text-primary hover:bg-primary/20">{TRAINER.jabatan}</Badge>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight">{TRAINER.nama}</h2>
+            <h2 className="font-display mt-3 text-2xl font-semibold tracking-tight">{TRAINER.nama}</h2>
             <p className="mt-3 max-w-2xl leading-7 text-muted-foreground">{TRAINER.deskripsi}</p>
           </div>
         </div>
@@ -42,7 +42,7 @@ export default function TentangPage() {
 
       <section className="border-t border-border/50 px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.2fr]">
-          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Cara kami mengajar</h2>
+          <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Cara kami mengajar</h2>
           <div className="space-y-6">
             <p className="text-base leading-7 text-muted-foreground">{ABOUT.approach}</p>
             <dl className="grid gap-5 sm:grid-cols-2">
@@ -60,11 +60,11 @@ export default function TentangPage() {
       <section className="border-y border-border/50 bg-muted/20 px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Visi</h2>
+            <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Visi</h2>
             <p className="mt-4 text-base leading-7 text-muted-foreground">{ABOUT.vision}</p>
           </div>
           <div>
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Misi</h2>
+            <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Misi</h2>
             <ul className="mt-4 space-y-3">
               {ABOUT.mission.map((m) => (
                 <li key={m} className="flex gap-3 text-base leading-7 text-muted-foreground">
@@ -81,7 +81,7 @@ export default function TentangPage() {
       <section className="px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Apa kata peserta</h2>
+            <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Apa kata peserta</h2>
             <p className="mt-3 text-muted-foreground">Pengalaman langsung dari peserta yang telah mengikuti pelatihan.</p>
           </div>
           <TestimoniCards />

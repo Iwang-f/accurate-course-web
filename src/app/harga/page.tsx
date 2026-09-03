@@ -22,7 +22,7 @@ export default function HargaPage() {
 
       <section className="px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Biaya training per paket</h2>
+          <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Biaya training per paket</h2>
           <p className="mt-2 text-sm text-muted-foreground">Pilih level sesuai kebutuhan tim: Paham, Bisa, atau Terampil.</p>
           <PricingCards />
         </div>
@@ -30,7 +30,7 @@ export default function HargaPage() {
 
       <section className="border-t border-border/50 bg-muted/20 px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Biaya kursus per orang</h2>
+          <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Biaya kursus per orang</h2>
           <p className="mt-2 text-sm text-muted-foreground">Diskon berlaku untuk pendaftaran berkelompok pada waktu yang sama.</p>
           <div className="mt-8 overflow-hidden rounded-xl border border-border/60 bg-card">
             <div className="grid grid-cols-1 overflow-x-auto sm:grid-cols-2 lg:grid-cols-4">
@@ -60,7 +60,7 @@ export default function HargaPage() {
 
       <section className="px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Ketentuan pelaksanaan</h2>
+          <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Ketentuan pelaksanaan</h2>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {getTerms().map((t: string) => (
               <li key={t} className="flex items-start gap-3 rounded-lg border border-border/60 bg-card px-5 py-4 text-sm text-muted-foreground">
