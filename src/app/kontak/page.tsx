@@ -6,7 +6,7 @@ import type { ConsultationInquiry } from "@/lib/consultation";
 import { buildConsultationUrl } from "@/lib/consultation";
 import { getSite, getPrograms } from "@/lib/site";
 import { PageIntro } from "@/components/page-intro";
-import { buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -70,9 +70,9 @@ export default function KontakPage() {
                 rows={4}
               />
             </div>
-            <button type="submit" className={buttonVariants({ size: "lg", className: "w-full gap-2" })}>
+            <Button type="submit" size="lg" className="w-full gap-2">
               Kirim ke WhatsApp
-            </button>
+            </Button>
           </form>
           </Reveal>
         </div>

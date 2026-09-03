@@ -37,7 +37,7 @@ export default function TentangPage() {
           <div>
             <Badge className="bg-primary/10 text-primary hover:bg-primary/20">{TRAINER.jabatan}</Badge>
             <h2 className="font-display mt-3 text-2xl font-semibold tracking-tight">{TRAINER.nama}</h2>
-            <p className="mt-3 max-w-2xl leading-7 text-muted-foreground">{TRAINER.deskripsi}</p>
+            <p className="mt-3 max-w-2xl leading-7 text-muted-foreground text-left sm:text-justify">{TRAINER.deskripsi}</p>
           </div>
         </div>
         </Reveal>
@@ -46,10 +46,10 @@ export default function TentangPage() {
       <section className="border-t border-border/50 px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.2fr]">
           <Reveal>
-            <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Cara kami mengajar</h2>
+            <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Cara kami mengajar</h2>
           </Reveal>
           <div className="space-y-6">
-            <p className="text-base leading-7 text-muted-foreground">{ABOUT.approach}</p>
+            <p className="text-base leading-7 text-muted-foreground text-left sm:text-justify">{ABOUT.approach}</p>
             <StaggerGroup className="grid gap-5 sm:grid-cols-2">
               {getKeunggulan().map((k) => (
                 <RevealItem key={k.judul}>
@@ -68,13 +68,13 @@ export default function TentangPage() {
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
           <Reveal>
             <div>
-              <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Visi</h2>
-              <p className="mt-4 text-base leading-7 text-muted-foreground">{ABOUT.vision}</p>
+              <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Visi</h2>
+              <p className="mt-4 text-base leading-7 text-muted-foreground text-left sm:text-justify">{ABOUT.vision}</p>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <div>
-              <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Misi</h2>
+              <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Misi</h2>
               <ul className="mt-4 space-y-3">
                 {ABOUT.mission.map((m) => (
                   <li key={m} className="flex gap-3 text-base leading-7 text-muted-foreground">
@@ -93,7 +93,7 @@ export default function TentangPage() {
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="max-w-2xl">
-              <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Apa kata peserta</h2>
+              <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Apa kata peserta</h2>
               <p className="mt-3 text-muted-foreground">Pengalaman langsung dari peserta yang telah mengikuti pelatihan.</p>
             </div>
           </Reveal>

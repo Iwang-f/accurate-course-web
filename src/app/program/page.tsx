@@ -59,7 +59,7 @@ export default function ProgramPage() {
             <div>
               <Badge className="bg-primary/10 text-primary hover:bg-primary/20">{TRAINER.jabatan}</Badge>
               <h2 className="font-display mt-3 text-2xl font-semibold tracking-tight">{TRAINER.nama}</h2>
-              <p className="mt-3 max-w-2xl leading-7 text-muted-foreground">{TRAINER.deskripsi}</p>
+              <p className="mt-3 max-w-2xl leading-7 text-muted-foreground text-left sm:text-justify">{TRAINER.deskripsi}</p>
             </div>
           </div>
         </Reveal>

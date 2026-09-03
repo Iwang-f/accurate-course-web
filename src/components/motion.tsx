@@ -90,6 +90,38 @@ export function EnterItem({ children, className }: { children: ReactNode; classN
 }
 
 /**
+ * Section-level frame: subtle background emphasis when the section enters
+ * view. One restrained effect per section — no border draws, no rainbows.
+ * `tint` defaults to a faint muted overlay so banded sections deepen slightly.
+ */
+export function SectionFrame({
+  children,
+  className,
+  tint = "bg-muted/30",
+}: {
+  children: ReactNode;
+  className?: string;
+  tint?: string;
+}) {
+  return (
+    <motion.div
+      className={`relative ${className ?? ""}`}
+      initial="hidden"
+      whileInView="shown"
+      viewport={{ once: true, margin: "-120px" }}
+      variants={{ hidden: {}, shown: {} }}
+    >
+      <motion.div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-0 ${tint}`}
+        variants={{ hidden: { opacity: 0 }, shown: { opacity: 1, transition: { duration: 0.8 } } }}
+      />
+      <div className="relative">{children}</div>
+    </motion.div>
+  );
+}
+
+/**
  * Count-up number for trust stats. Parses the leading integer out of a
  * display string ("100+" → 100 with suffix "+") and animates 0 → value
  * when scrolled into view. Non-numeric strings render as-is.

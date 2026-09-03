@@ -27,10 +27,10 @@ export default function Home() {
             <EnterGroup className="flex flex-col justify-center">
               <EnterItem>
                 <Badge className="w-fit bg-primary/10 text-primary hover:bg-primary/20">Pelatihan Software Akuntansi</Badge>
-                <h1 className="font-display mt-6 text-4xl font-semibold leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
+                <h1 className="font-display mt-6 text-4xl font-semibold leading-[1.08] tracking-tight text-balance md:text-5xl lg:text-6xl">
                   Kursus Accurate untuk tim yang menangani pembukuan setiap hari
                 </h1>
-                <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">
+                <p className="mt-4 text-base leading-7 text-muted-foreground text-pretty md:text-lg">
                   Program pelatihan disusun berdasarkan alur kerja akuntansi perusahaan. Peserta mempelajari pengoperasian Accurate sekaligus logika pencatatan yang mendasarinya.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
@@ -74,7 +74,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="max-w-2xl">
-              <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">Situasi yang mungkin sedang Anda hadapi</h2>
+              <h2 className="font-display text-3xl font-semibold tracking-tight text-balance md:text-4xl">Situasi yang mungkin sedang Anda hadapi</h2>
               <p className="mt-4 text-muted-foreground">
                 Banyak tim finance dan akuntan menghadapi kendala serupa. Program ini dirancang untuk menyelesaikannya.
               </p>
@@ -88,7 +88,7 @@ export default function Home() {
       <section className="px-5 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">Ditujukan untuk</h2>
+            <h2 className="font-display text-3xl font-semibold tracking-tight text-balance md:text-4xl">Ditujukan untuk</h2>
           </Reveal>
           <TopicCards items={getTargets()} className="mt-10 lg:grid-cols-3" />
         </div>
@@ -99,7 +99,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="max-w-2xl">
-              <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">Setelah kursus, Anda akan mampu</h2>
+              <h2 className="font-display text-3xl font-semibold tracking-tight text-balance md:text-4xl">Setelah kursus, Anda akan mampu</h2>
               <p className="mt-4 text-muted-foreground">
                 Bukan sekadar tahu menu software, tetapi menguasai alur akuntansi yang benar.
               </p>
@@ -118,7 +118,7 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-2">
             <Reveal>
               <div>
-                <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">Pendekatan pelatihan</h2>
+                <h2 className="font-display text-3xl font-semibold tracking-tight text-balance md:text-4xl">Pendekatan pelatihan</h2>
                 <p className="mt-4 text-muted-foreground">
                   Materi tidak disusun sebagai tur fitur. Setiap sesi mengikuti urutan pekerjaan yang dilakukan staf akuntansi, sehingga peserta langsung memahami konteks penggunaannya.
                 </p>
@@ -146,7 +146,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="max-w-2xl">
-              <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">Apa yang membedakan</h2>
+              <h2 className="font-display text-3xl font-semibold tracking-tight text-balance md:text-4xl">Apa yang membedakan</h2>
               <p className="mt-4 text-muted-foreground">
                 Tidak semua lembaga training Accurate sama. Berikut perbedaan utama yang perlu Anda tahu.
               </p>
@@ -161,7 +161,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="max-w-2xl">
-              <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">Daftar program</h2>
+              <h2 className="font-display text-3xl font-semibold tracking-tight text-balance md:text-4xl">Daftar program</h2>
               <p className="mt-4 text-muted-foreground">Program dapat diikuti secara terpisah atau digabungkan sesuai kebutuhan perusahaan.</p>
             </div>
           </Reveal>
@@ -177,7 +177,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="max-w-2xl">
-              <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">Apa kata peserta</h2>
+              <h2 className="font-display text-3xl font-semibold tracking-tight text-balance md:text-4xl">Apa kata peserta</h2>
               <p className="mt-4 text-muted-foreground">
                 Pengalaman langsung dari peserta yang telah mengikuti pelatihan.
               </p>
@@ -226,7 +226,7 @@ export default function Home() {
       <section id="faq" className="border-t border-border/50 px-5 py-16 md:py-20">
         <div className="mx-auto max-w-3xl">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">Pertanyaan yang sering diajukan</h2>
+            <h2 className="font-display text-3xl font-semibold tracking-tight text-balance md:text-4xl">Pertanyaan yang sering diajukan</h2>
           </Reveal>
           <Accordion className="mt-8 w-full">
             {getFaq().map((item, idx) => (

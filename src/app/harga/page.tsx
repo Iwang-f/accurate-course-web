@@ -24,7 +24,7 @@ export default function HargaPage() {
       <section className="px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Biaya training per paket</h2>
+            <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Biaya training per paket</h2>
             <p className="mt-2 text-sm text-muted-foreground">Pilih level sesuai kebutuhan tim: Paham, Bisa, atau Terampil.</p>
           </Reveal>
           <PricingCards />
@@ -34,7 +34,7 @@ export default function HargaPage() {
       <section className="border-t border-border/50 bg-muted/20 px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Biaya kursus per orang</h2>
+            <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Biaya kursus per orang</h2>
             <p className="mt-2 text-sm text-muted-foreground">Diskon berlaku untuk pendaftaran berkelompok pada waktu yang sama.</p>
           </Reveal>
           <StaggerGroup className="mt-8 grid grid-cols-1 overflow-x-auto sm:grid-cols-2 lg:grid-cols-4">
@@ -65,7 +65,7 @@ export default function HargaPage() {
       <section className="px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <h2 className="font-display text-2xl font-semibold tracking-tight md:text-3xl">Ketentuan pelaksanaan</h2>
+            <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Ketentuan pelaksanaan</h2>
           </Reveal>
           <StaggerGroup className="mt-8 grid gap-4 sm:grid-cols-2">
             {getTerms().map((t: string) => (
