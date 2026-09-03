@@ -7,6 +7,15 @@ import { buildConsultationUrl } from "@/lib/consultation";
 import { getSite, getPrograms } from "@/lib/site";
 import { PageIntro } from "@/components/page-intro";
 import { buttonVariants } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Reveal } from "@/components/motion";
 
 const EMPTY: ConsultationInquiry = { nama: "", perusahaan: "", jumlah: "", program: "", kendala: "" };
@@ -41,25 +50,24 @@ export default function KontakPage() {
             <Field label="Jumlah peserta" value={inquiry.jumlah} onChange={(v) => set("jumlah", v)} placeholder="Contoh: 3 orang" />
             <div>
               <label className="mb-1.5 block text-sm font-medium">Program diminati</label>
-              <select
-                value={inquiry.program}
-                onChange={(e) => set("program", e.target.value)}
-                className="w-full rounded-lg border border-border/60 bg-background px-4 py-2.5 text-sm outline-none focus:border-primary"
-              >
-                <option value="">Pilih program (opsional)</option>
-                {getPrograms().map((p) => (
-                  <option key={p.judul} value={p.judul}>{p.judul}</option>
-                ))}
-              </select>
+              <Select value={inquiry.program} onValueChange={(v) => set("program", v ?? "")}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Pilih program (opsional)" />
+                </SelectTrigger>
+                <SelectContent>
+                  {getPrograms().map((p) => (
+                    <SelectItem key={p.judul} value={p.judul}>{p.judul}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <div>
               <label className="mb-1.5 block text-sm font-medium">Kendala Accurate saat ini</label>
-              <textarea
+              <Textarea
                 value={inquiry.kendala}
                 onChange={(e) => set("kendala", e.target.value)}
                 placeholder="Contoh: laporan keuangan sering tidak balance, tim belum pernah training formal, dll."
                 rows={4}
-                className="w-full resize-y rounded-lg border border-border/60 bg-background px-4 py-2.5 text-sm outline-none focus:border-primary"
               />
             </div>
             <button type="submit" className={buttonVariants({ size: "lg", className: "w-full gap-2" })}>
@@ -101,13 +109,12 @@ function Field({
         {label}
         {required && <span className="ml-0.5 text-destructive">*</span>}
       </label>
-      <input
+      <Input
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         required={required}
-        className="w-full rounded-lg border border-border/60 bg-background px-4 py-2.5 text-sm outline-none focus:border-primary"
       />
     </div>
   );

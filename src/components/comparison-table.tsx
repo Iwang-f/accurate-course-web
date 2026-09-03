@@ -1,6 +1,15 @@
 import { Check, X } from "lucide-react";
 import { getComparison } from "@/lib/site";
 import { Reveal } from "@/components/motion";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 /**
  * Comparison table — SayBriefly pattern. Contrasts Accurate Pro Academy
@@ -9,40 +18,41 @@ import { Reveal } from "@/components/motion";
  */
 export function ComparisonTable() {
   const rows = getComparison();
-  const isYes = (v: string) => ["Ya", "Termasuk", "Dianjurkan"].includes(v);
 
   return (
     <Reveal className="mt-10">
       <div className="overflow-x-auto rounded-xl border border-border/60 bg-card">
-        <table className="w-full min-w-[560px] border-collapse text-sm">
-          <caption className="sr-only">Perbandingan Accurate Pro Academy dengan lembaga training lain</caption>
-          <thead>
-            <tr className="border-b border-border/60 bg-muted/40 text-left">
-              <th scope="col" className="px-6 py-4 font-semibold">Aspek</th>
-              <th scope="col" className="px-6 py-4 font-semibold text-primary">Accurate Pro Academy</th>
-              <th scope="col" className="px-6 py-4 font-semibold text-muted-foreground">Lembaga lain</th>
-            </tr>
-          </thead>
-          <tbody>
+        <Table className="min-w-[560px]">
+          <TableCaption className="sr-only">
+            Perbandingan Accurate Pro Academy dengan lembaga training lain
+          </TableCaption>
+          <TableHeader>
+            <TableRow className="bg-muted/40 hover:bg-muted/40">
+              <TableHead className="px-6 py-4">Aspek</TableHead>
+              <TableHead className="px-6 py-4 font-semibold text-primary">Accurate Pro Academy</TableHead>
+              <TableHead className="px-6 py-4 font-semibold text-muted-foreground">Lembaga lain</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
             {rows.map((row) => (
-              <tr key={row.aspek} className="border-b border-border/40 last:border-b-0">
-                <th scope="row" className="px-6 py-4 font-medium">{row.aspek}</th>
-                <td className="px-6 py-4">
+              <TableRow key={row.aspek}>
+                <TableCell className="px-6 py-4 font-medium">{row.aspek}</TableCell>
+                <TableCell className="px-6 py-4">
                   <span className="inline-flex items-center gap-2 font-semibold text-primary">
                     <Check className="size-4 shrink-0" aria-hidden="true" />
                     {row.accuratePro}
                   </span>
-                </td>
-                <td className="px-6 py-4">
+                </TableCell>
+                <TableCell className="px-6 py-4">
                   <span className="inline-flex items-center gap-2 text-muted-foreground">
                     <X className="size-4 shrink-0" aria-hidden="true" />
                     {row.lainnya}
                   </span>
-                </td>
-              </tr>
+                </TableCell>
+              </TableRow>
             ))}
-          </tbody>
-        </table>
+          </TableBody>
+        </Table>
       </div>
     </Reveal>
   );
