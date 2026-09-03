@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     type: "website", locale: "id_ID", url: SITE.url, siteName: SITE.name,
     title: "Kursus Accurate untuk tim finance dan pemilik usaha",
     description: SITE.description,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Accurate Pro Academy — Kursus dan Training Software Accurate" }],
   },
   robots: { index: !SITE.isDraft, follow: !SITE.isDraft },
 };
