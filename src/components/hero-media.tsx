@@ -37,8 +37,8 @@ export function HeroMedia() {
         )}
       </div>
 
-      {/* Floating outcome chips — Rhetorich pattern */}
-      <div className="pointer-events-none absolute -bottom-6 left-1/2 flex w-max -translate-x-1/2 gap-3">
+      {/* Floating outcome chips — Rhetorich pattern. Width capped to viewport so chips wrap on mobile. */}
+      <div className="pointer-events-none absolute -bottom-6 left-1/2 flex w-max max-w-[calc(100vw-2rem)] -translate-x-1/2 flex-wrap justify-center gap-2 px-4 sm:flex-nowrap sm:gap-3">
         {chips.map((chip) => (
           <div
             key={chip.label}
