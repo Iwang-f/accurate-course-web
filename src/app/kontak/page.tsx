@@ -7,6 +7,7 @@ import { buildConsultationUrl } from "@/lib/consultation";
 import { getSite, getPrograms } from "@/lib/site";
 import { PageIntro } from "@/components/page-intro";
 import { buttonVariants } from "@/components/ui/button";
+import { Reveal } from "@/components/motion";
 
 const EMPTY: ConsultationInquiry = { nama: "", perusahaan: "", jumlah: "", program: "", kendala: "" };
 
@@ -33,6 +34,7 @@ export default function KontakPage() {
 
       <section className="px-5 py-14 sm:px-8 md:py-16">
         <div className="mx-auto max-w-2xl">
+          <Reveal>
           <form onSubmit={handleSubmit} className="space-y-6">
             <Field label="Nama" value={inquiry.nama} onChange={(v) => set("nama", v)} placeholder="Nama lengkap" required />
             <Field label="Perusahaan" value={inquiry.perusahaan} onChange={(v) => set("perusahaan", v)} placeholder="Nama perusahaan" required />
@@ -64,6 +66,7 @@ export default function KontakPage() {
               Kirim ke WhatsApp
             </button>
           </form>
+          </Reveal>
         </div>
       </section>
 
