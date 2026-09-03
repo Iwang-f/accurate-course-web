@@ -60,6 +60,36 @@ export function RevealItem({ children, className }: { children: ReactNode; class
 }
 
 /**
+ * Mount-time staggered entrance for above-the-fold content (hero).
+ * Unlike StaggerGroup this fires on load, not on scroll — the hero is
+ * already in view, so whileInView would flash. Pair with <EnterItem>.
+ */
+export function EnterGroup({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <motion.div
+      className={className}
+      initial="hidden"
+      animate="shown"
+      variants={{ hidden: {}, shown: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/** A child of <EnterGroup>; fades up on mount after its siblings. */
+export function EnterItem({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <motion.div
+      className={className}
+      variants={{ hidden: { opacity: 0, y: 24 }, shown: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] } } }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/**
  * Count-up number for trust stats. Parses the leading integer out of a
  * display string ("100+" → 100 with suffix "+") and animates 0 → value
  * when scrolled into view. Non-numeric strings render as-is.

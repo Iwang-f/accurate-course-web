@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Card } from "@/components/ui/card";
 import { getSite, getTargets, getKeunggulan, getPrograms, getFaq, getPain, getOutcomes, getTrust, getTestimoni } from "@/lib/site";
-import { ArrowRight, CheckCircle2, Check } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { TopicCards } from "@/components/topic-cards";
 import { CtaBanner } from "@/components/cta-banner";
 import { HeroMedia } from "@/components/hero-media";
 import { MarqueeStrip } from "@/components/marquee-strip";
 import { BigStatStatement } from "@/components/big-stat-statement";
 import { ComparisonTable } from "@/components/comparison-table";
-import { Reveal, StaggerGroup, RevealItem, CountUp } from "@/components/motion";
+import { Reveal, StaggerGroup, RevealItem, CountUp, EnterGroup, EnterItem } from "@/components/motion";
 
 export default function Home() {
   const site = getSite();
@@ -24,8 +24,8 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-border/50 bg-gradient-to-b from-background to-muted/20 px-5 py-12 md:py-20 lg:py-28">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-14 lg:grid-cols-2 lg:gap-16">
-            <div className="flex flex-col justify-center">
-              <Reveal>
+            <EnterGroup className="flex flex-col justify-center">
+              <EnterItem>
                 <Badge className="w-fit bg-primary/10 text-primary hover:bg-primary/20">Pelatihan Software Akuntansi</Badge>
                 <h1 className="font-display mt-6 text-4xl font-semibold leading-[1.08] tracking-tight md:text-5xl lg:text-6xl">
                   Kursus Accurate untuk tim yang menangani pembukuan setiap hari
@@ -41,10 +41,10 @@ export default function Home() {
                     Lihat daftar program
                   </Link>
                 </div>
-              </Reveal>
+              </EnterItem>
 
               {/* Trust strip — stat chips row */}
-              <Reveal delay={0.15} y={16}>
+              <EnterItem>
                 <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
                   {getTrust().map((item) => (
                     <div key={item.label} className="flex items-baseline gap-2">
@@ -55,13 +55,13 @@ export default function Home() {
                     </div>
                   ))}
                 </dl>
-              </Reveal>
-            </div>
+              </EnterItem>
+            </EnterGroup>
 
             {/* Hero media — video placeholder + floating chips */}
-            <Reveal delay={0.2} y={32}>
+            <EnterItem>
               <HeroMedia />
-            </Reveal>
+            </EnterItem>
           </div>
         </div>
       </section>
