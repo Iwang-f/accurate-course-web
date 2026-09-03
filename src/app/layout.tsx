@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Fraunces } from "next/font/google";
 import "./globals.css";
 import { getSite } from "@/lib/site";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { Providers } from "@/components/providers";
 
 const SITE = getSite();
 
-const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin"], display: "swap" });
+const fontBody = Montserrat({ variable: "--font-body", subsets: ["latin"], display: "swap" });
+const fontDisplay = Fraunces({ variable: "--font-display", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -24,11 +26,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={montserrat.variable}>
+    <html lang="id" className={`${fontBody.variable} ${fontDisplay.variable}`}>
       <body className="flex min-h-screen flex-col">
-        <Header />
-        {children}
-        <Footer />
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

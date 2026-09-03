@@ -13,6 +13,8 @@ export const SITE = {
   description: "Kursus Accurate untuk tim finance, akuntan, dan pemilik usaha yang ingin menguasai software akuntansi secara sistematis.",
   keywords: ["kursus Accurate", "training Accurate", "akuntansi", "Accurate Online", "Accurate Desktop V5"],
   whatsapp: "https://wa.me/6280000000000",
+  heroVideo: "", // draft: client screen recording URL or /media/accurate-walkthrough.mp4
+  heroVideoPoster: "", // draft: poster image URL or /media/accurate-walkthrough.webp
   isDraft: true,
 } as const;
 
@@ -189,6 +191,57 @@ export const TRUST: readonly { angka: string; label: string }[] = [
   { angka: "98%", label: "peserta puas" },
 ] as const;
 
+/** V2.1 — outcome chips shown over the hero media. PLACEHOLDER. */
+/** @deprecated Use getHeroChips() instead. */
+export const HERO_CHIPS: readonly { angka: string; label: string }[] = [
+  { angka: "2 hari", label: "rekap bulanan" },
+  { angka: "95%", label: "rekonsiliasi beres" },
+  { angka: "10x", label: "laporan lebih cepat" },
+] as const;
+
+/** V2.1 — marquee wordmark list for the trust strip below the hero. PLACEHOLDER. */
+/** @deprecated Use getMarqueeItems() instead. */
+export const MARQUEE_ITEMS: readonly string[] = [
+  "Accurate Online",
+  "Accurate Desktop V5",
+  "Akuntansi Dagang",
+  "Manufaktur",
+  "Jasa",
+  "Retail",
+  "Konsultan",
+  "Ekspor Impor",
+] as const;
+
+/** V2.1 — big stat statement section (SayBriefly pattern). PLACEHOLDER angka. */
+/** @deprecated Use getBigStat() instead. */
+export const BIG_STAT = {
+  angka: "10+",
+  judul: "jam dihabiskan tiap bulan untuk rekap pembukuan manual",
+  isi: "Untuk tim finance 3 orang itu berarti 30 jam kerja. Waktu itu bisa kembali ke pekerjaan yang bernilai: analisis, bukan sekadar mengetik.",
+} as const;
+
+/** V2.1 — comparison table (SayBriefly pattern). PLACEHOLDER criteria. */
+/** @deprecated Use getComparison() instead. */
+export const COMPARISON: readonly {
+  aspek: string;
+  accuratePro: string;
+  lainnya: string;
+}[] = [
+  { aspek: "Instruktur praktisi akuntan aktif", accuratePro: "Ya", lainnya: "Jarang" },
+  { aspek: "Kurikulum berbasis transaksi nyata", accuratePro: "Ya", lainnya: "Tutorial menu" },
+  { aspek: "Pendampingan setelah kelas", accuratePro: "Termasuk", lainnya: "Tidak" },
+  { aspek: "Bisa pakai data perusahaan sendiri", accuratePro: "Dianjurkan", lainnya: "Berdasarkan jadwal" },
+  { aspek: "Sertifikat penyelesaian", accuratePro: "Ya", lainnya: "Tergantung" },
+] as const;
+
+/** V2.1 — chapter numbering metadata per program. */
+const CHAPTER_NUM: Readonly<Record<string, string>> = {
+  "Accurate Online Fundamental": "1",
+  "Accurate Desktop V5": "2",
+  "Private Training": "3",
+  "Konsultasi dan Review": "4",
+};
+
 /** @deprecated Use getPrograms() instead. */
 export const PROGRAM: readonly Topic[] = [
   { judul: "Accurate Online Fundamental", isi: "Mencakup pembuatan data master, transaksi pembelian dan penjualan, manajemen stok, serta penyusunan laporan keuangan dasar." },
@@ -292,4 +345,29 @@ export function getFaq() {
 /** The class most commonly taken (first class in the catalogue), for hero highlights. */
 export function getFeaturedClass() {
   return PROGRAM_ITEMS.find((item) => item.kategori === "kelas");
+}
+
+/** V2.1 — outcome chips over the hero media. */
+export function getHeroChips() {
+  return HERO_CHIPS;
+}
+
+/** V2.1 — marquee wordmarks for the trust strip below the hero. */
+export function getMarqueeItems() {
+  return MARQUEE_ITEMS;
+}
+
+/** V2.1 — big stat statement for the mid-page section. */
+export function getBigStat() {
+  return BIG_STAT;
+}
+
+/** V2.1 — comparison table rows. */
+export function getComparison() {
+  return COMPARISON;
+}
+
+/** V2.1 — chapter number for a program, e.g. "1.2" for module 2 of program 1. */
+export function getChapterNumber(program: string, moduleIdx: number): string {
+  return `${CHAPTER_NUM[program] ?? "?"}.${moduleIdx + 1}`;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { getModul } from "@/lib/site";
+import { getModul, getChapterNumber } from "@/lib/site";
 
 /** Curriculum accordion per program. Keys must match PROGRAM / PROGRAM_ITEMS titles. */
 export function SilabusAccordion({ judulProgram }: { judulProgram: string }) {
@@ -20,8 +20,8 @@ export function SilabusAccordion({ judulProgram }: { judulProgram: string }) {
           <ol className="space-y-2 pl-1">
             {modul.map((item, idx) => (
               <li key={item} className="flex gap-3 text-sm leading-6 text-muted-foreground">
-                <span className="mt-0.5 size-5 shrink-0 rounded bg-muted text-center text-xs font-bold leading-5 tabular-nums text-muted-foreground">
-                  {idx + 1}
+                <span className="mt-0.5 shrink-0 rounded bg-muted px-1.5 text-xs font-bold leading-5 tabular-nums text-primary">
+                  {getChapterNumber(judulProgram, idx)}
                 </span>
                 {item}
               </li>

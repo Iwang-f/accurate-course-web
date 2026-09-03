@@ -16,6 +16,11 @@ import {
   getTrust,
   getPrograms,
   getFaq,
+  getHeroChips,
+  getMarqueeItems,
+  getBigStat,
+  getComparison,
+  getChapterNumber,
 } from "./site.ts";
 
 test("getNav returns 5 navigation items with label and href", () => {
@@ -139,4 +144,42 @@ test("getFaq returns 5 questions with tanya and jawab", () => {
     assert.ok(f.tanya);
     assert.ok(f.jawab.length > 30);
   }
+});
+
+test("getHeroChips returns 3 chips with angka and label", () => {
+  const chips = getHeroChips();
+  assert.equal(chips.length, 3);
+  for (const c of chips) {
+    assert.ok(c.angka);
+    assert.ok(c.label);
+  }
+});
+
+test("getMarqueeItems returns non-empty wordmarks", () => {
+  const items = getMarqueeItems();
+  assert.ok(items.length >= 4);
+  for (const i of items) assert.ok(i.length > 0);
+});
+
+test("getBigStat has angka, judul, isi", () => {
+  const s = getBigStat();
+  assert.ok(s.angka);
+  assert.ok(s.judul);
+  assert.ok(s.isi.length > 30);
+});
+
+test("getComparison rows have all three columns filled", () => {
+  const rows = getComparison();
+  assert.ok(rows.length >= 3);
+  for (const r of rows) {
+    assert.ok(r.aspek);
+    assert.ok(r.accuratePro);
+    assert.ok(r.lainnya);
+  }
+});
+
+test("getChapterNumber formats program.module correctly", () => {
+  assert.equal(getChapterNumber("Accurate Online Fundamental", 0), "1.1");
+  assert.equal(getChapterNumber("Accurate Desktop V5", 3), "2.4");
+  assert.equal(getChapterNumber("Unknown Program", 1), "?.2");
 });

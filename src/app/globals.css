@@ -4,7 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: var(--font-montserrat);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -32,25 +33,25 @@
 
 :root {
   --radius: 0.5rem;
-  --background: #f8f8f6;
-  --foreground: #17201c;
+  --background: #f7f8f4;
+  --foreground: #0e1b15;
   --card: #ffffff;
-  --card-foreground: #17201c;
+  --card-foreground: #0e1b15;
   --popover: #ffffff;
-  --popover-foreground: #17201c;
-  --primary: #155c43;
-  --primary-foreground: #f8f8f6;
-  --secondary: #e9eeea;
-  --secondary-foreground: #244335;
-  --muted: #eef1ee;
-  --muted-foreground: #64736b;
-  --accent: #d7eb8b;
-  --accent-foreground: #17201c;
-  --highlight: #f59e0b;
-  --highlight-foreground: #17201c;
-  --border: #dce3dd;
-  --input: #dce3dd;
-  --ring: #155c43;
+  --popover-foreground: #0e1b15;
+  --primary: #0c2e21;
+  --primary-foreground: #f7f8f4;
+  --secondary: #e7efe8;
+  --secondary-foreground: #14382a;
+  --muted: #edf1eb;
+  --muted-foreground: #5d6e63;
+  --accent: #9fd98b;
+  --accent-foreground: #0e1b15;
+  --highlight: #f5c84c;
+  --highlight-foreground: #1a1405;
+  --border: #d9e1d8;
+  --input: #d9e1d8;
+  --ring: #0c2e21;
 }
 
 * { border-color: var(--border); }
@@ -59,12 +60,38 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3 {
   letter-spacing: -0.02em;
+}
+
+/* ------------------------------------------------------------------ *
+ * Typography role: display serif for headlines (editorial authority),
+ * body sans (Montserrat) for UI and copy.
+ * ------------------------------------------------------------------ */
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  letter-spacing: -0.02em;
+  font-weight: 560;
+  font-variation-settings: "opsz" 72;
+}
+
+/* Eyebrow label: small uppercase tracking above section headings. */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Respect reduced motion for the CSS-fallback marquee. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
 }
 
 :where(a, button, summary, [tabindex]):focus-visible {

@@ -46,8 +46,8 @@ src/app/
 ### ADR-0001 — Static export only
 `output: "export"` in `next.config.ts`. No server runtime. All pages statically pre-rendered.
 
-### ADR-0002 — Single font family
-Montserrat only (400–800). Rationale: DM Serif Display + cream background reads as AI-generated.
+### ADR-0002 — Dual font family
+Fraunces (display serif) for headings; Montserrat (sans) for body and UI. Rationale: serif heading + sans body creates editorial authority suitable for a professional training brand, avoiding the "AI-generated single sans" look.
 
 ### ADR-0003 — CTA via WhatsApp
 No form backend. Contact form builds a WhatsApp deep-link URL. Replies are manual, done by the instructor.
