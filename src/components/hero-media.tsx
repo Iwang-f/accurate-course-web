@@ -1,11 +1,11 @@
 import { getSite, getHeroChips } from "@/lib/site";
-import { Play } from "lucide-react";
+import { AccurateMotionMock } from "@/components/accurate-motion-mock";
 
 /**
  * Hero media panel. When the client has supplied a screen recording,
  * `SITE.heroVideo` is set and the video autoplays muted+looped.
- * Until then a clearly-marked draft placeholder renders — never a fake
- * product screenshot.
+ * Until then, the animated Accurate UI mockup renders — clearly marked
+ * as a simulation so it's never mistaken for the real product.
  */
 export function HeroMedia() {
   const site = getSite();
@@ -26,14 +26,12 @@ export function HeroMedia() {
             className="aspect-video w-full object-cover"
           />
         ) : (
-          /* DRAFT placeholder — replace with real Accurate walkthrough recording. */
-          <div className="flex aspect-video w-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-primary to-[#123f2d] px-6 text-center">
-            <span className="flex size-12 items-center justify-center rounded-full bg-accent/20 ring-1 ring-accent/40">
-              <Play className="size-5 translate-x-0.5 fill-accent text-accent" aria-hidden="true" />
-            </span>
-            <p className="text-sm font-semibold text-primary-foreground">Video demo penggunaan Accurate</p>
-            <p className="text-xs text-primary-foreground/60">DRAFT — menunggu screen recording dari klien</p>
-          </div>
+          <>
+            <AccurateMotionMock />
+            <p className="absolute bottom-2 left-2 rounded bg-muted/80 px-2 py-0.5 text-[9px] font-medium text-muted-foreground backdrop-blur sm:text-[10px]">
+              Simulasi tampilan — video asli dari klien akan menggantikan
+            </p>
+          </>
         )}
       </div>
 
