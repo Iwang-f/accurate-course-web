@@ -118,15 +118,15 @@ export const BENEFITS: readonly Topic[] = [
 export const PAIN: readonly Topic[] = [
   {
     judul: "Laporan masih manual di Excel",
-    isi: "Anda rekap pembukuan berjam-jam tiap bulan. Salah ketik satu angka, audit langsung macet.",
+    isi: "Anda menghabiskan berjam-jam untuk rekap pembukuan tiap bulan. Salah ketik satu angka, audit langsung macet.",
   },
   {
     judul: "Sudah pakai Accurate tapi asal-asalan",
-    isi: "Software sudah terpasang. Tapi jurnal tertunda, stok tak cocok, closing bermasalah. Laporan jadi ragu.",
+    isi: "Software sudah terpasang. Tapi jurnal tertunda, stok tidak cocok, closing bermasalah. Laporan jadi ragu.",
   },
   {
     judul: "Ingin menaikkan tarif ke klien",
-    isi: "Anda sulit menaikkan tarif. Pembukuan Anda belum rapi, klien tak melihat nilai Anda.",
+    isi: "Anda sulit menaikkan tarif. Pembukuan Anda belum rapi, klien tidak melihat nilai Anda.",
   },
 ] as const;
 
