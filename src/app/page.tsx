@@ -3,8 +3,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";
-import { getSite, getTargets, getKeunggulan, getPrograms, getFaq, getPain, getOutcomes, getTrust, getTestimoni } from "@/lib/site";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { getSite, getTargets, getKeunggulan, getPrograms, getFaq, getPain, getOutcomes, getTrust, getTestimoni, getBenefits } from "@/lib/site";
+import { ArrowRight, CheckCircle2, Award, MessageCircle, FileText, CalendarClock } from "lucide-react";
 import { TopicCards } from "@/components/topic-cards";
 import { CtaBanner } from "@/components/cta-banner";
 import { HeroMedia } from "@/components/hero-media";
@@ -153,6 +153,32 @@ export default function Home() {
             </div>
           </Reveal>
           <ComparisonTable />
+        </div>
+      </section>
+
+      {/* ── Benefits ── */}
+      <section className="px-5 py-16 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2 className="font-display text-3xl font-semibold tracking-tight text-balance md:text-4xl">Apa yang Anda dapat</h2>
+              <p className="mt-4 text-muted-foreground text-pretty">Bukan cuma bisa membuka Accurate. Anda pulang dengan bekal yang bisa langsung dipakai.</p>
+            </div>
+          </Reveal>
+          <StaggerGroup className="mt-10 grid gap-4 sm:grid-cols-2">
+            {getBenefits().map((benefit, index) => {
+              const Icon = [Award, MessageCircle, FileText, CalendarClock][index] ?? Award;
+              return (
+                <RevealItem key={benefit.judul}>
+                  <Card className="h-full border-border/60 px-6 py-6">
+                    <Icon className="size-6 text-primary" aria-hidden="true" />
+                    <h3 className="font-display mt-5 text-lg font-semibold">{benefit.judul}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted-foreground">{benefit.isi}</p>
+                  </Card>
+                </RevealItem>
+              );
+            })}
+          </StaggerGroup>
         </div>
       </section>
 

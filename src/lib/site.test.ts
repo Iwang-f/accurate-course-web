@@ -16,8 +16,8 @@ import {
   getTrust,
   getPrograms,
   getFaq,
-  getHeroChips,
   getMarqueeItems,
+  getBenefits,
   getBigStat,
   getComparison,
   getChapterNumber,
@@ -146,19 +146,19 @@ test("getFaq returns 5 questions with tanya and jawab", () => {
   }
 });
 
-test("getHeroChips returns 3 chips with angka and label", () => {
-  const chips = getHeroChips();
-  assert.equal(chips.length, 3);
-  for (const c of chips) {
-    assert.ok(c.angka);
-    assert.ok(c.label);
-  }
-});
-
 test("getMarqueeItems returns non-empty wordmarks", () => {
   const items = getMarqueeItems();
   assert.ok(items.length >= 4);
   for (const i of items) assert.ok(i.length > 0);
+});
+
+test("getBenefits returns 4 entries with judul and isi", () => {
+  const benefits = getBenefits();
+  assert.equal(benefits.length, 4);
+  for (const b of benefits) {
+    assert.ok(b.judul);
+    assert.ok(b.isi.length > 20);
+  }
 });
 
 test("getBigStat has angka, judul, isi", () => {

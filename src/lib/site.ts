@@ -93,6 +93,26 @@ export const KEUNGGULAN = [
   { judul: "Pendampingan Setelah Kelas", isi: "Peserta mendapatkan akses konsultasi singkat via WhatsApp pasca-training." },
 ] as const;
 
+/** V2.4 — what participants get (benefit cards, FAC-inspired). */
+export const BENEFITS: readonly Topic[] = [
+  {
+    judul: "Sertifikat resmi",
+    isi: "Setiap peserta mendapat sertifikat dari Accurate Pro Academy sebagai bukti menyelesaikan pelatihan.",
+  },
+  {
+    judul: "Pendampingan pasca-training",
+    isi: "Masih bingung setelah kelas selesai? Tanyakan lewat WhatsApp, kami bantu sampai benar.",
+  },
+  {
+    judul: "Modul praktis",
+    isi: "Materi mengikuti versi Accurate terbaru dan workflow perusahaan Indonesia, bukan daftar menu software.",
+  },
+  {
+    judul: "Jadwal fleksibel",
+    isi: "Onsite Jabodetabek atau daring. Jam pelatihan menyesuaikan ritme kerja tim Anda.",
+  },
+] as const;
+
 /** V2 — pain points (dari pola Ultimate Framer Course). */
 /** @deprecated Use getPain() instead. */
 export const PAIN: readonly Topic[] = [
@@ -189,14 +209,6 @@ export const TRUST: readonly { angka: string; label: string }[] = [
   { angka: "100+", label: "peserta mengikuti pelatihan" },
   { angka: "5+", label: "perusahaan mitra" },
   { angka: "98%", label: "peserta puas" },
-] as const;
-
-/** V2.1 — outcome chips shown over the hero media. PLACEHOLDER. */
-/** @deprecated Use getHeroChips() instead. */
-export const HERO_CHIPS: readonly { angka: string; label: string }[] = [
-  { angka: "2 hari", label: "rekap bulanan" },
-  { angka: "95%", label: "rekonsiliasi beres" },
-  { angka: "10x", label: "laporan lebih cepat" },
 ] as const;
 
 /** V2.1 — marquee wordmark list for the trust strip below the hero. PLACEHOLDER. */
@@ -347,14 +359,14 @@ export function getFeaturedClass() {
   return PROGRAM_ITEMS.find((item) => item.kategori === "kelas");
 }
 
-/** V2.1 — outcome chips over the hero media. */
-export function getHeroChips() {
-  return HERO_CHIPS;
-}
-
 /** V2.1 — marquee wordmarks for the trust strip below the hero. */
 export function getMarqueeItems() {
   return MARQUEE_ITEMS;
+}
+
+/** V2.4 — benefit cards for the "Apa yang Anda dapat" section. */
+export function getBenefits() {
+  return BENEFITS;
 }
 
 /** V2.1 — big stat statement for the mid-page section. */

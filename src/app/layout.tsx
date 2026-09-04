@@ -4,6 +4,7 @@ import "./globals.css";
 import { getSite } from "@/lib/site";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { WhatsAppFab } from "@/components/whatsapp-fab";
 import { Providers } from "@/components/providers";
 
 const SITE = getSite();
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Header />
           {children}
           <Footer />
+          <WhatsAppFab />
         </Providers>
       </body>
     </html>
