@@ -31,7 +31,7 @@ export default function Home() {
                   Kursus Accurate untuk tim yang menangani pembukuan setiap hari
                 </h1>
                 <p className="mt-4 text-base leading-7 text-muted-foreground text-pretty md:text-lg">
-                  Program pelatihan disusun berdasarkan alur kerja akuntansi perusahaan. Peserta mempelajari pengoperasian Accurate sekaligus logika pencatatan yang mendasarinya.
+                  Anda belajar input jurnal sampai laporan keuangan jadi. Langsung praktik dengan contoh transaksi nyata.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a href={site.whatsapp} className={buttonVariants({ size: "lg", className: "bg-primary text-primary-foreground hover:bg-primary/90" })}>
