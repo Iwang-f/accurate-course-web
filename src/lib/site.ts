@@ -118,15 +118,15 @@ export const BENEFITS: readonly Topic[] = [
 export const PAIN: readonly Topic[] = [
   {
     judul: "Laporan masih manual di Excel",
-    isi: "Rekap pembukuan makan waktu berjam-jam tiap bulan, rawan salah ketik, dan sulit ditelusuri saat diaudit.",
+    isi: "Anda rekap pembukuan berjam-jam tiap bulan. Salah ketik satu angka, audit langsung macet.",
   },
   {
     judul: "Sudah pakai Accurate tapi asal-asalan",
-    isi: "Software terpasang, tapi alur jurnal, stok, dan closing masih campur aduk sehingga laporan tidak bisa dipercaya.",
+    isi: "Software sudah terpasang. Tapi jurnal tertunda, stok tak cocok, closing bermasalah. Laporan jadi ragu.",
   },
   {
     judul: "Ingin menaikkan tarif ke klien",
-    isi: "Tanpa penguasaan software akuntansi yang rapi, sulit membuktikan nilai profesional ke klien atau atasan.",
+    isi: "Anda sulit menaikkan tarif. Pembukuan Anda belum rapi, klien tak melihat nilai Anda.",
   },
 ] as const;
 
@@ -135,15 +135,15 @@ export const PAIN: readonly Topic[] = [
 export const OUTCOMES: readonly Topic[] = [
   {
     judul: "Menyusun laporan keuangan sendiri",
-    isi: "Input transaksi hingga laporan laba rugi dan neraca siap saji, tanpa tergantung orang lain.",
+    isi: "Anda input jurnal sampai laporan keuangan jadi. Laba rugi dan neraca keluar tanpa bantuan orang lain.",
   },
   {
     judul: "Menutup periode tanpa panik",
-    isi: "Jurnal penyesuaian, penyusutan, dan closing period selesai dengan alur yang benar dan terdokumentasi.",
+    isi: "Jurnal penyesuaian, penyusutan, lalu closing. Alurnya berurutan dan terdokumentasi tiap bulan.",
   },
   {
     judul: "Melayani klien lebih profesional",
-    isi: "Standar pembukuan yang rapi dan bisa diaudit, sehingga tarif dan kredibilitas naik.",
+    isi: "Pembukuan klien Anda rapi dan siap audit. Tarif naik karena hasil kerja Anda terlihat.",
   },
 ] as const;
 
@@ -159,19 +159,19 @@ export const TESTIMONI: readonly {
     nama: "Nama Peserta 1",
     jabatan: "Staf Finance",
     perusahaan: "Perusahaan Dagang",
-    isi: "Sebelumnya laporan bulanan selesai seminggu, sekarang dua hari. Alur yang diajarkan langsung saya pakai di kerjaan.",
+    isi: "Dulu laporan bulanan saya selesai seminggu. Sekarang dua hari. Alur dari kelas langsung saya pakai di kerjaan.",
   },
   {
     nama: "Nama Peserta 2",
     jabatan: "Pemilik Usaha",
     perusahaan: "Toko Retail",
-    isi: "Saya tidak perlu lagi menyewa pihak luar untuk pembukuan. Stok dan piutang sekarang bisa saya pantau sendiri.",
+    isi: "Dulu saya bayar orang luar untuk pembukuan. Sekarang stok dan piutang saya pantau sendiri dari Accurate.",
   },
   {
     nama: "Nama Peserta 3",
     jabatan: "Konsultan Pajak",
     perusahaan: "Kantor Konsultan",
-    isi: "Materinya berbasis studi kasus nyata, bukan sekadar menu-menu software. Langsung relevan dengan pekerjaan klien saya.",
+    isi: "Latihannya pakai studi kasus nyata, bukan menu demo. Besoknya langsung saya pakai untuk klien.",
   },
 ] as const;
 
@@ -229,7 +229,7 @@ export const MARQUEE_ITEMS: readonly string[] = [
 export const BIG_STAT = {
   angka: "10+",
   judul: "jam dihabiskan tiap bulan untuk rekap pembukuan manual",
-  isi: "Untuk tim finance 3 orang itu berarti 30 jam kerja. Waktu itu bisa kembali ke pekerjaan yang bernilai: analisis, bukan sekadar mengetik.",
+  isi: "Tim finance tiga orang bisa menghabiskan 30 jam kerja untuk rekap. Anda bisa memakai waktu itu untuk membaca laporan.",
 } as const;
 
 /** V2.1 — comparison table (SayBriefly pattern). PLACEHOLDER criteria. */
@@ -239,10 +239,10 @@ export const COMPARISON: readonly {
   accuratePro: string;
   lainnya: string;
 }[] = [
-  { aspek: "Instruktur praktisi akuntan aktif", accuratePro: "Ya", lainnya: "Jarang" },
-  { aspek: "Kurikulum berbasis transaksi nyata", accuratePro: "Ya", lainnya: "Tutorial menu" },
-  { aspek: "Pendampingan setelah kelas", accuratePro: "Termasuk", lainnya: "Tidak" },
-  { aspek: "Bisa pakai data perusahaan sendiri", accuratePro: "Dianjurkan", lainnya: "Berdasarkan jadwal" },
+  { aspek: "Instruktur yang aktif menangani pembukuan", accuratePro: "Ya", lainnya: "Jarang" },
+  { aspek: "Latihan pakai transaksi nyata, bukan demo", accuratePro: "Ya", lainnya: "Tutorial menu" },
+  { aspek: "Pendampingan setelah kelas lewat WhatsApp", accuratePro: "Termasuk", lainnya: "Tidak" },
+  { aspek: "Bisa pakai data perusahaan sendiri waktu latihan", accuratePro: "Dianjurkan", lainnya: "Berdasarkan jadwal" },
   { aspek: "Sertifikat penyelesaian", accuratePro: "Ya", lainnya: "Tergantung" },
 ] as const;
 
@@ -264,11 +264,11 @@ export const PROGRAM: readonly Topic[] = [
 
 /** @deprecated Use getFaq() instead. */
 export const FAQ = [
-  { tanya: "Apakah program ini cocok untuk pemula yang belum pernah menggunakan Accurate?", jawab: "Cocok. Modul fundamental dirancang untuk peserta tanpa pengalaman sebelumnya. Instruktur akan membimbing dari navigasi dasar hingga peserta mampu melakukan pencatatan secara mandiri." },
-  { tanya: "Bagaimana pelaksanaan training: online atau offline?", jawab: "Kelas reguler dilaksanakan secara daring. Untuk Private Training, format dapat disesuaikan: daring atau onsite di perusahaan." },
-  { tanya: "Berapa lama durasi setiap program?", jawab: "Bergantung pada cakupan materi. Rata-rata 2 hingga 4 sesi (masing-masing 3 jam). Untuk Private Training, durasi ditentukan setelah diskusi kebutuhan." },
-  { tanya: "Apakah peserta dapat menggunakan data perusahaannya saat latihan?", jawab: "Sangat dianjurkan, khususnya untuk Private Training. Latihan dengan data nyata membuat hasil langsung dapat diterapkan." },
-  { tanya: "Apa yang membedakan Accurate Pro Academy dari lembaga training Accurate lain?", jawab: "Instruktur adalah akuntan yang aktif menangani pembukuan klien. Pendekatan yang diajarkan tidak hanya teknis software, tetapi juga pemahaman akuntansi yang mendasarinya." },
+  { tanya: "Apakah program ini cocok untuk pemula yang belum pernah menggunakan Accurate?", jawab: "Cocok. Anda mulai dari nol: setup perusahaan, lalu input jurnal sampai laporan keuangan jadi. Instruktur membimbing sampai Anda bisa pencatatan sendiri." },
+  { tanya: "Bagaimana pelaksanaan training: online atau offline?", jawab: "Kelas reguler berjalan daring. Untuk Private Training, Anda bisa pilih daring atau onsite di kantor Anda." },
+  { tanya: "Berapa lama durasi setiap program?", jawab: "Rata-rata 2 sampai 4 sesi, masing-masing tiga jam. Untuk Private Training, durasi menyesuaikan kebutuhan perusahaan Anda." },
+  { tanya: "Apakah peserta dapat menggunakan data perusahaannya saat latihan?", jawab: "Sangat dianjurkan, terutama untuk Private Training. Anda latihan dengan data nyata, jadi hasilnya langsung Anda pakai di kantor." },
+  { tanya: "Apa yang membedakan Accurate Pro Academy dari lembaga training Accurate lain?", jawab: "Instruktur akuntan yang masih aktif menangani pembukuan klien. Anda belajar alur kerja akuntansi, bukan sekadar menghafal menu software." },
 ] as const;
 
 /* ------------------------------------------------------------------ *
