@@ -9,7 +9,7 @@ import { Reveal, StaggerGroup, RevealItem } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Tentang Kami",
-  description: "Profil, visi, dan pendekatan pelatihan Accurate Pro Academy.",
+  description: "Kenali Accurate Pro Academy: siapa yang mengajar, cara kami mengajar, dan visi pembukuan tertib untuk tim finance Indonesia.",
 };
 
 export default function TentangPage() {
@@ -94,7 +94,7 @@ export default function TentangPage() {
           <Reveal>
             <div className="max-w-2xl">
               <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Apa kata peserta</h2>
-              <p className="mt-3 text-muted-foreground">Pengalaman langsung dari peserta yang telah mengikuti pelatihan.</p>
+              <p className="mt-3 text-muted-foreground">Cerita dari peserta yang pernah ikut kelas kami.</p>
             </div>
           </Reveal>
           <TestimoniCards />
@@ -105,7 +105,7 @@ export default function TentangPage() {
         <div className="mx-auto max-w-6xl">
           <CtaBanner
             title="Diskusikan kebutuhan tim Anda"
-            description="Kami akan menyusun rekomendasi program setelah memahami kondisi pembukuan yang berjalan."
+            description="Ceritakan pembukuan Anda sekarang. Kami rekomendasikan program yang cocok."
             action="Hubungi via WhatsApp"
           />
         </div>

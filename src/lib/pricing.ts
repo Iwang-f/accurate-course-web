@@ -112,12 +112,12 @@ export function getTerms(): readonly string[] {
 }
 
 export const ABOUT = {
-  intro: "Accurate Pro Academy menyediakan pelatihan software akuntansi untuk pemilik usaha, tim finance, dan akuntan yang ingin membangun proses pembukuan lebih teratur.",
-  approach: "Kelas dirancang dengan contoh transaksi dan alur kerja yang dekat dengan kegiatan operasional perusahaan. Peserta tidak hanya mengikuti langkah pada software, tetapi memahami alasan di balik setiap pencatatan.",
-  vision: "Membantu lebih banyak tim di Indonesia membangun pembukuan yang tertib melalui penggunaan software dan pemahaman akuntansi yang baik.",
+  intro: "Accurate Pro Academy mengajarkan software Accurate untuk pemilik usaha, tim finance, dan akuntan. Anda belajar dari input jurnal sampai laporan keuangan jadi.",
+  approach: "Kami pakai contoh transaksi dari operasional perusahaan. Anda berlatih rekonsiliasi dan closing dengan data yang mirip pekerjaan sehari-hari. Setiap langkah dijelaskan alasannya, bukan cuma klik-nya.",
+  vision: "Pembukuan tertib harus jadi hal biasa di perusahaan Indonesia. Kami ingin tim finance bisa closing tepat waktu dan laporannya siap dipakai.",
   mission: [
-    "Menyediakan materi pelatihan yang dapat diterapkan dalam pekerjaan sehari-hari.",
-    "Menghubungkan penggunaan Accurate dengan prinsip pencatatan akuntansi.",
-    "Memberikan pendampingan yang bertanggung jawab setelah pelatihan.",
+    "Materi pelatihan yang langsung dipakai di pekerjaan berikutnya.",
+    "Latihan memakai kasus nyata: input jurnal, rekonsiliasi, sampai closing bulanan.",
+    "Pendampingan setelah kelas selesai, sampai tim Anda benar-benar jalan.",
   ],
 } as const;

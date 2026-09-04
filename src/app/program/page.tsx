@@ -12,7 +12,7 @@ import type { ProgramItem } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Program Training Accurate",
-  description: "Program training Accurate Online, Accurate Desktop V5, dan layanan private untuk tim finance.",
+  description: "Pilih training Accurate Online, Accurate Desktop V5, atau kelas private berdasarkan pekerjaan tim finance Anda.",
 };
 
 export default function ProgramPage() {
@@ -23,7 +23,7 @@ export default function ProgramPage() {
 
   return (
     <main className="flex-1">
-      <PageIntro eyebrow="Program Training" title="Belajar Accurate dari transaksi yang benar-benar Anda kerjakan" description="Pilih kelas utama atau diskusikan format private yang sesuai dengan alur kerja tim Anda." />
+      <PageIntro eyebrow="Program Training" title="Belajar Accurate lewat transaksi yang Anda kerjakan" description="Pilih kelas utama atau kelas private sesuai pekerjaan tim Anda." />
       <section className="px-5 py-14 sm:px-8 md:py-16">
         <div className="mx-auto max-w-6xl">
           <Reveal>
@@ -64,7 +64,7 @@ export default function ProgramPage() {
           </div>
         </Reveal>
       </section>
-      <section className="px-5 pb-14 sm:px-8 md:pb-20"><div className="mx-auto max-w-6xl"><CtaBanner title="Belum yakin program mana yang cocok?" description="Ceritakan kondisi tim dan alur kerja Anda. Kami bantu memetakan titik mulai yang realistis." action="Diskusikan kebutuhan" /></div></section>
+      <section className="px-5 pb-14 sm:px-8 md:pb-20"><div className="mx-auto max-w-6xl"><CtaBanner title="Belum yakin memilih program?" description="Ceritakan pekerjaan dan kendala tim Anda. Kami bantu pilih kelas yang cocok." action="Diskusikan kebutuhan" /></div></section>
     </main>
   );
 }

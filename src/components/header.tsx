@@ -26,10 +26,10 @@ export function Header() {
           <a href={site.whatsapp} className={buttonVariants({ size: "sm", className: "gap-1.5 bg-primary text-primary-foreground hover:bg-primary/90" })}>Konsultasi <ArrowUpRight className="size-3.5" /></a>
         </div>
         <Sheet>
-          <SheetTrigger className={buttonVariants({ variant: "ghost", size: "icon", className: "md:hidden" })} aria-label="Buka menu"><Menu className="size-5" /></SheetTrigger>
+          <SheetTrigger className={buttonVariants({ variant: "ghost", size: "icon", className: "min-h-11 min-w-11 md:hidden" })} aria-label="Buka menu"><Menu className="size-5" /></SheetTrigger>
           <SheetContent side="right" className="w-[280px] bg-background pt-16">
             <nav className="flex flex-col gap-6" aria-label="Navigasi mobile">
-              {nav.map((item) => <Link key={item.href} href={item.href} className="text-base text-muted-foreground hover:text-foreground">{item.label}</Link>)}
+              {nav.map((item) => <Link key={item.href} href={item.href} className="-mx-3 px-3 py-3 text-base text-muted-foreground hover:text-foreground">{item.label}</Link>)}
               <a href={site.whatsapp} className={buttonVariants({ className: "mt-3 bg-primary text-primary-foreground" })}>Jadwalkan konsultasi</a>
             </nav>
           </SheetContent>

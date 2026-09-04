@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Hubungi Kami",
-  description: "Konsultasikan kebutuhan training Accurate untuk tim finance Anda via WhatsApp.",
+  description: "Konsultasi training Accurate via WhatsApp. Ceritakan kebutuhan tim, kami bantu pilih program.",
 };
 
 export default function KontakLayout({ children }: { children: React.ReactNode }) {

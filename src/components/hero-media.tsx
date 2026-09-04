@@ -27,9 +27,7 @@ export function HeroMedia() {
         ) : (
           <>
             <AccurateMotionMock />
-            <p className="absolute bottom-2 left-2 rounded bg-muted/80 px-2 py-0.5 text-[9px] font-medium text-muted-foreground backdrop-blur sm:text-[10px]">
-              Simulasi tampilan — video asli dari klien akan menggantikan
-            </p>
+            <p className="absolute bottom-2 left-2 rounded bg-muted/80 px-2 py-0.5 text-[11px] font-medium text-muted-foreground backdrop-blur">Simulasi tampilan — video asli dari klien akan menggantikan</p>
           </>
         )}
       </div>

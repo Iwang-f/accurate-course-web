@@ -38,7 +38,7 @@ export default function KontakPage() {
       <PageIntro
         eyebrow="Hubungi Kami"
         title="Diskusikan kebutuhan training tim Anda"
-        description="Ceritakan kondisi pembukuan yang berjalan. Kami akan merekomendasikan titik mulai yang paling relevan."
+        description="Ceritakan kendala Accurate Anda. Kami bantu pilih titik mulai yang cocok."
       />
 
       <section className="px-5 py-14 sm:px-8 md:py-16">
@@ -51,7 +51,7 @@ export default function KontakPage() {
             <div>
               <label className="mb-1.5 block text-sm font-medium">Program diminati</label>
               <Select value={inquiry.program} onValueChange={(v) => set("program", v ?? "")}>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="min-h-11 w-full">
                   <SelectValue placeholder="Pilih program (opsional)" />
                 </SelectTrigger>
                 <SelectContent>
@@ -82,7 +82,7 @@ export default function KontakPage() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Respons cepat</p>
           <p className="mt-4 max-w-lg text-base leading-7 text-muted-foreground sm:mx-auto">
-            Kami membalas pesan WhatsApp dalam 1×24 jam pada hari kerja. Jam operasional Senin–Jumat, 09.00–17.00 WIB.
+            Kami balas pesan WhatsApp dalam 1×24 jam pada hari kerja. Jam kerja kami Senin–Jumat, 09.00–17.00 WIB.
           </p>
         </div>
       </section>

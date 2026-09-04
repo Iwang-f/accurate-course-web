@@ -9,7 +9,7 @@ import { Reveal, StaggerGroup, RevealItem } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Harga Training",
-  description: "Biaya training dan kursus software Accurate: paket per durasi, harga per orang, dan ketentuan pelaksanaan.",
+  description: "Lihat biaya training Accurate per paket dan per peserta, termasuk durasi kelas serta ketentuan pelaksanaannya.",
 };
 
 export default function HargaPage() {
@@ -18,14 +18,14 @@ export default function HargaPage() {
       <PageIntro
         eyebrow="Harga Training"
         title="Biaya training dan kursus software Accurate"
-        description="Harga di bawah untuk pelatihan di Jakarta. Untuk lokasi di luar Jakarta, biaya transportasi dan akomodasi dihitung terpisah."
+        description="Harga berikut berlaku untuk training di Jakarta. Transportasi dan akomodasi luar Jakarta dihitung terpisah."
       />
 
       <section className="px-5 py-14 md:py-16 sm:px-8">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Biaya training per paket</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Pilih level sesuai kebutuhan tim: Paham, Bisa, atau Terampil.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Pilih paket Paham, Bisa, atau Terampil sesuai target tim Anda.</p>
           </Reveal>
           <PricingCards />
         </div>
@@ -35,7 +35,7 @@ export default function HargaPage() {
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Biaya kursus per orang</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Diskon berlaku untuk pendaftaran berkelompok pada waktu yang sama.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Harga per orang lebih rendah saat beberapa peserta mendaftar bersamaan.</p>
           </Reveal>
           <StaggerGroup className="mt-8 grid grid-cols-1 overflow-x-auto sm:grid-cols-2 lg:grid-cols-4">
             {getCoursePricing().map((item: CoursePriceTier) => (
@@ -57,7 +57,7 @@ export default function HargaPage() {
           </StaggerGroup>
           <p className="mt-4 flex items-start gap-2 text-sm text-muted-foreground">
             <span className="mt-1 size-1.5 shrink-0 rounded-full bg-primary" />
-            Kepuasan dijamin: bila materi tidak sesuai kebutuhan, diskusikan dengan kami sebelum sesi kedua untuk penyesuaian atau pengembalian.
+            Materi tidak sesuai kebutuhan? Hubungi kami sebelum sesi kedua untuk penyesuaian atau pengembalian biaya.
           </p>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function HargaPage() {
           <div className="mt-10">
             <CtaBanner
               title="Butuh penawaran untuk tim Anda?"
-              description="Konsultasikan kebutuhan training dan dapatkan rekomendasi paket yang sesuai."
+              description="Ceritakan jumlah peserta dan target training. Kami rekomendasikan paket yang cocok."
             />
           </div>
         </div>

@@ -53,10 +53,10 @@ function WindowChrome() {
         <i className="size-2.5 rounded-full bg-[#fbbf24]" />
         <i className="size-2.5 rounded-full bg-[#34d399]" />
       </span>
-      <span className="ml-2 truncate text-[10px] font-medium text-muted-foreground sm:text-xs">
+      <span className="ml-2 truncate text-xs font-medium text-muted-foreground sm:text-sm">
         Accurate — Jurnal Umum
       </span>
-      <span className="ml-auto hidden rounded bg-primary/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-primary sm:inline">
+      <span className="ml-auto hidden rounded bg-primary/10 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-primary sm:inline">
         v5
       </span>
     </div>
@@ -77,7 +77,7 @@ function Sidebar() {
 function JournalTable() {
   return (
     <div className="min-w-0 flex-1 px-3 py-2 sm:px-4 sm:py-3">
-      <div className="grid grid-cols-[1fr_5rem_5rem] gap-1 border-b border-border/60 pb-1 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground sm:grid-cols-[1fr_6rem_6rem] sm:text-[10px]">
+      <div className="grid grid-cols-[1fr_5rem_5rem] gap-1 border-b border-border/60 pb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:grid-cols-[1fr_6rem_6rem] sm:text-sm">
         <span>Akun</span>
         <span className="text-right">Debit</span>
         <span className="text-right">Kredit</span>
@@ -86,7 +86,7 @@ function JournalTable() {
         {ROWS.map((row, i) => (
           <motion.div
             key={row.akun}
-            className="grid grid-cols-[1fr_5rem_5rem] items-baseline gap-1 py-1.5 text-[10px] sm:grid-cols-[1fr_6rem_6rem] sm:text-xs"
+            className="grid grid-cols-[1fr_5rem_5rem] items-baseline gap-1 py-1.5 text-xs sm:grid-cols-[1fr_6rem_6rem] sm:text-sm"
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 + i * 0.55, duration: 0.45, ease: EASE }}
@@ -108,7 +108,7 @@ function JournalTable() {
 function StatusRow() {
   return (
     <div className="flex items-center justify-between border-t border-border/60 bg-muted/30 px-3 py-2 sm:px-4">
-      <div className="text-[10px] text-muted-foreground sm:text-xs">
+      <div className="text-xs text-muted-foreground sm:text-sm">
         Total
         <span className="ml-2 font-semibold text-foreground">
           <Money value={TOTAL} delay={3.2} />
@@ -116,7 +116,7 @@ function StatusRow() {
       </div>
       <div className="relative h-5 w-28">
         <motion.span
-          className="absolute inset-0 flex items-center justify-center gap-1 rounded-full bg-muted px-2 text-[9px] font-semibold text-muted-foreground sm:text-[10px]"
+          className="absolute inset-0 flex items-center justify-center gap-1 rounded-full bg-muted px-2 text-[11px] font-semibold text-muted-foreground sm:text-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1, 1, 0] }}
           transition={{ duration: 5, times: [0, 0.5, 0.93, 1] }}
@@ -125,7 +125,7 @@ function StatusRow() {
           Memproses…
         </motion.span>
         <motion.span
-          className="absolute inset-0 flex items-center justify-center gap-1 rounded-full bg-emerald-100 px-2 text-[9px] font-bold text-emerald-700 sm:text-[10px]"
+          className="absolute inset-0 flex items-center justify-center gap-1 rounded-full bg-emerald-100 px-2 text-[11px] font-bold text-emerald-700 sm:text-sm"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 4.6, duration: 0.4, ease: EASE }}
@@ -141,7 +141,7 @@ function StatusRow() {
 function MiniChart() {
   return (
     <div className="flex items-end gap-2 border-t border-border/60 px-3 py-2 sm:px-4 sm:py-3">
-      <span className="mr-1 hidden text-[9px] font-semibold uppercase tracking-wider text-muted-foreground sm:inline">
+      <span className="mr-1 hidden text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:inline">
         Pencatatan
       </span>
       {BARS.map((bar, i) => (
@@ -155,7 +155,7 @@ function MiniChart() {
               transition={{ delay: 3.6 + i * 0.2, duration: 0.6, ease: EASE }}
             />
           </div>
-          <span className="text-[8px] text-muted-foreground sm:text-[9px]">{bar.label}</span>
+          <span className="text-[8px] text-muted-foreground sm:text-[11px]">{bar.label}</span>
         </div>
       ))}
     </div>
@@ -193,14 +193,14 @@ function MockStatic() {
         <Sidebar />
         <div className="flex min-w-0 flex-1 flex-col">
           <div className="min-w-0 flex-1 px-3 py-2 sm:px-4 sm:py-3">
-            <div className="grid grid-cols-[1fr_5rem_5rem] gap-1 border-b border-border/60 pb-1 text-[9px] font-semibold uppercase tracking-wider text-muted-foreground sm:grid-cols-[1fr_6rem_6rem] sm:text-[10px]">
+            <div className="grid grid-cols-[1fr_5rem_5rem] gap-1 border-b border-border/60 pb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:grid-cols-[1fr_6rem_6rem] sm:text-sm">
               <span>Akun</span>
               <span className="text-right">Debit</span>
               <span className="text-right">Kredit</span>
             </div>
             <div className="divide-y divide-border/40">
               {ROWS.map((row) => (
-                <div key={row.akun} className="grid grid-cols-[1fr_5rem_5rem] items-baseline gap-1 py-1.5 text-[10px] sm:grid-cols-[1fr_6rem_6rem] sm:text-xs">
+                <div key={row.akun} className="grid grid-cols-[1fr_5rem_5rem] items-baseline gap-1 py-1.5 text-xs sm:grid-cols-[1fr_6rem_6rem] sm:text-sm">
                   <span className="truncate font-medium text-foreground">{row.akun}</span>
                   <span className="text-right tabular-nums text-foreground/80">
                     {row.debit > 0 && row.debit.toLocaleString("id-ID")}
@@ -213,11 +213,11 @@ function MockStatic() {
             </div>
           </div>
           <div className="flex items-center justify-between border-t border-border/60 bg-muted/30 px-3 py-2 sm:px-4">
-            <div className="text-[10px] text-muted-foreground sm:text-xs">
+            <div className="text-xs text-muted-foreground sm:text-sm">
               Total
               <span className="ml-2 font-semibold tabular-nums text-foreground">{TOTAL.toLocaleString("id-ID")}</span>
             </div>
-            <span className="flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[9px] font-bold text-emerald-700 sm:text-[10px]">
+            <span className="flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-bold text-emerald-700 sm:text-sm">
               <CheckCircle2 className="size-3 shrink-0" aria-hidden="true" />
               Seimbang
             </span>
@@ -228,7 +228,7 @@ function MockStatic() {
                 <div className="flex h-8 w-full items-end overflow-hidden rounded-sm bg-muted/60 sm:h-12">
                   <div className="w-full rounded-sm bg-primary" style={{ height: `${bar.height}%` }} />
                 </div>
-                <span className="text-[8px] text-muted-foreground sm:text-[9px]">{bar.label}</span>
+                <span className="text-[8px] text-muted-foreground sm:text-[11px]">{bar.label}</span>
               </div>
             ))}
           </div>
