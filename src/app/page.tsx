@@ -34,10 +34,10 @@ export default function Home() {
                   Anda belajar input jurnal sampai laporan keuangan jadi. Langsung praktik dengan contoh transaksi nyata.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <a href={site.whatsapp} className={buttonVariants({ size: "lg", className: "bg-primary text-primary-foreground hover:bg-primary/90" })}>
+                  <a href={site.whatsapp} className={buttonVariants({ size: "lg", className: "min-h-11 bg-primary text-primary-foreground hover:bg-primary/90" })}>
                     Jadwalkan konsultasi <ArrowRight className="ml-2 size-4" />
                   </a>
-                  <Link href="/program" className={buttonVariants({ variant: "outline", size: "lg" })}>
+                  <Link href="/program" className={buttonVariants({ variant: "outline", size: "lg", className: "min-h-11" })}>
                     Lihat daftar program
                   </Link>
                 </div>
