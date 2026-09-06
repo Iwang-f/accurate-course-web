@@ -5,8 +5,7 @@
  * DRAFT: Beberapa nilai placeholder (WA number, URL) harus diganti sebelum go-live.
  */
 
-/** @deprecated Use getSite() instead. */
-export const SITE = {
+const SITE = {
   name: "Accurate Pro Academy",
   subline: "akademi",
   url: "https://accurate-course-prototype.vercel.app",
@@ -18,8 +17,7 @@ export const SITE = {
   isDraft: true,
 } as const;
 
-/** @deprecated Use getNav() instead. */
-export const NAV = [
+const NAV = [
   { label: "Beranda", href: "/" },
   { label: "Program", href: "/program" },
   { label: "Harga Training", href: "/harga" },
@@ -30,15 +28,13 @@ export const NAV = [
 /** Shared shape for card-style content blocks (target audience, programs). */
 export type Topic = Readonly<{ judul: string; isi: string }>;
 
-/** @deprecated Use getTargets() instead. */
-export const TARGET: readonly Topic[] = [
+const TARGET: readonly Topic[] = [
   { judul: "Pemilik Usaha", isi: "Membutuhkan laporan keuangan yang rapi dan terstruktur tanpa harus menjadi akuntan." },
   { judul: "Tim Finance", isi: "Ingin memperkuat kompetensi Accurate secara teknis sekaligus konseptual." },
   { judul: "Akuntan Publik", isi: "Perlu memperbarui keterampilan software akuntansi untuk menunjang pekerjaan klien." },
 ] as const;
 
-/** @deprecated Use getTrainer() instead. */
-export const TRAINER = {
+const TRAINER = {
   nama: "Iwang Fadillo",
   jabatan: "Akuntan Praktisi",
   deskripsi:
@@ -54,8 +50,7 @@ export type ProgramItem = Readonly<{
   harga: string;
 }>;
 
-/** @deprecated Use getProgramItems() instead. */
-export const PROGRAM_ITEMS: readonly ProgramItem[] = [
+const PROGRAM_ITEMS: readonly ProgramItem[] = [
   {
     kategori: "kelas",
     judul: "Accurate Online Fundamental",
@@ -86,15 +81,14 @@ export const PROGRAM_ITEMS: readonly ProgramItem[] = [
   },
 ] as const;
 
-/** @deprecated Use getKeunggulan() instead. */
-export const KEUNGGULAN = [
+const KEUNGGULAN = [
   { judul: "Kurikulum Berbasis Praktik", isi: "Materi mengikuti alur kerja akuntansi harian, bukan daftar menu software." },
   { judul: "Studi Kasus Perusahaan Indonesia", isi: "Contoh transaksi dan pelaporan yang relevan dengan regulasi dan kebiasaan bisnis lokal." },
   { judul: "Pendampingan Setelah Kelas", isi: "Peserta mendapatkan akses konsultasi singkat via WhatsApp pasca-training." },
 ] as const;
 
 /** V2.4 — what participants get (benefit cards, FAC-inspired). */
-export const BENEFITS: readonly Topic[] = [
+const BENEFITS: readonly Topic[] = [
   {
     judul: "Sertifikat resmi",
     isi: "Setiap peserta mendapat sertifikat dari Accurate Pro Academy sebagai bukti menyelesaikan pelatihan.",
@@ -114,8 +108,7 @@ export const BENEFITS: readonly Topic[] = [
 ] as const;
 
 /** V2 — pain points (dari pola Ultimate Framer Course). */
-/** @deprecated Use getPain() instead. */
-export const PAIN: readonly Topic[] = [
+const PAIN: readonly Topic[] = [
   {
     judul: "Laporan masih manual di Excel",
     isi: "Anda menghabiskan berjam-jam untuk rekap pembukuan tiap bulan. Salah ketik satu angka, audit langsung macet.",
@@ -131,8 +124,7 @@ export const PAIN: readonly Topic[] = [
 ] as const;
 
 /** V2 — outcomes (pola Ultimate Framer Course "By the end you will"). */
-/** @deprecated Use getOutcomes() instead. */
-export const OUTCOMES: readonly Topic[] = [
+const OUTCOMES: readonly Topic[] = [
   {
     judul: "Menyusun laporan keuangan sendiri",
     isi: "Anda input jurnal sampai laporan keuangan jadi. Laba rugi dan neraca keluar tanpa bantuan orang lain.",
@@ -148,8 +140,7 @@ export const OUTCOMES: readonly Topic[] = [
 ] as const;
 
 /** V2 — social proof. PLACEHOLDER: wajib diganti data asli klien sebelum go-live. */
-/** @deprecated Use getTestimoni() instead. */
-export const TESTIMONI: readonly {
+const TESTIMONI: readonly {
   nama: string;
   jabatan: string;
   perusahaan: string;
@@ -176,8 +167,7 @@ export const TESTIMONI: readonly {
 ] as const;
 
 /** V2 — silabus per program, dipakai accordion curriculum. */
-/** @deprecated Use getModul() instead. */
-export const MODUL: Readonly<Record<string, readonly string[]>> = {
+const MODUL: Readonly<Record<string, readonly string[]>> = {
   "Accurate Online Fundamental": [
     "Setup perusahaan, data master, dan akun perkiraan",
     "Transaksi pembelian & penjualan, manajemen stok",
@@ -204,16 +194,14 @@ export const MODUL: Readonly<Record<string, readonly string[]>> = {
 } as const;
 
 /** V2 — trust strip di hero. PLACEHOLDER angka: wajib ganti data asli sebelum go-live. */
-/** @deprecated Use getTrust() instead. */
-export const TRUST: readonly { angka: string; label: string }[] = [
+const TRUST: readonly { angka: string; label: string }[] = [
   { angka: "100+", label: "peserta mengikuti pelatihan" },
   { angka: "5+", label: "perusahaan mitra" },
   { angka: "98%", label: "peserta puas" },
 ] as const;
 
 /** V2.1 — marquee wordmark list for the trust strip below the hero. PLACEHOLDER. */
-/** @deprecated Use getMarqueeItems() instead. */
-export const MARQUEE_ITEMS: readonly string[] = [
+const MARQUEE_ITEMS: readonly string[] = [
   "Accurate Online",
   "Accurate Desktop V5",
   "Akuntansi Dagang",
@@ -225,16 +213,14 @@ export const MARQUEE_ITEMS: readonly string[] = [
 ] as const;
 
 /** V2.1 — big stat statement section (SayBriefly pattern). PLACEHOLDER angka. */
-/** @deprecated Use getBigStat() instead. */
-export const BIG_STAT = {
+const BIG_STAT = {
   angka: "10+",
   judul: "jam dihabiskan tiap bulan untuk rekap pembukuan manual",
   isi: "Tim finance tiga orang bisa menghabiskan 30 jam kerja untuk rekap. Anda bisa memakai waktu itu untuk membaca laporan.",
 } as const;
 
 /** V2.1 — comparison table (SayBriefly pattern). PLACEHOLDER criteria. */
-/** @deprecated Use getComparison() instead. */
-export const COMPARISON: readonly {
+const COMPARISON: readonly {
   aspek: string;
   accuratePro: string;
   lainnya: string;
@@ -254,22 +240,33 @@ const CHAPTER_NUM: Readonly<Record<string, string>> = {
   "Konsultasi dan Review": "4",
 };
 
-/** @deprecated Use getPrograms() instead. */
-export const PROGRAM: readonly Topic[] = [
+const PROGRAM: readonly Topic[] = [
   { judul: "Accurate Online Fundamental", isi: "Mencakup pembuatan data master, transaksi pembelian dan penjualan, manajemen stok, serta penyusunan laporan keuangan dasar." },
   { judul: "Accurate Desktop V5", isi: "Meliputi siklus akuntansi penuh: pencatatan jurnal, penyesuaian, penyusutan aset tetap, hingga closing period." },
   { judul: "Private Training", isi: "Kurikulum disesuaikan dengan kebutuhan perusahaan. Dapat dilaksanakan di lokasi (Jabodetabek) atau secara daring." },
   { judul: "Konsultasi dan Review", isi: "Evaluasi terhadap alur kerja Accurate yang telah berjalan, disertai rekomendasi perbaikan." },
 ] as const;
 
-/** @deprecated Use getFaq() instead. */
-export const FAQ = [
+const FAQ = [
   { tanya: "Apakah program ini cocok untuk pemula yang belum pernah menggunakan Accurate?", jawab: "Cocok. Anda mulai dari nol: setup perusahaan, lalu input jurnal sampai laporan keuangan jadi. Instruktur membimbing sampai Anda bisa pencatatan sendiri." },
   { tanya: "Bagaimana pelaksanaan training: online atau offline?", jawab: "Kelas reguler berjalan daring. Untuk Private Training, Anda bisa pilih daring atau onsite di kantor Anda." },
   { tanya: "Berapa lama durasi setiap program?", jawab: "Rata-rata 2 sampai 4 sesi, masing-masing tiga jam. Untuk Private Training, durasi menyesuaikan kebutuhan perusahaan Anda." },
   { tanya: "Apakah peserta dapat menggunakan data perusahaannya saat latihan?", jawab: "Sangat dianjurkan, terutama untuk Private Training. Anda latihan dengan data nyata, jadi hasilnya langsung Anda pakai di kantor." },
   { tanya: "Apa yang membedakan Accurate Pro Academy dari lembaga training Accurate lain?", jawab: "Instruktur akuntan yang masih aktif menangani pembukuan klien. Anda belajar alur kerja akuntansi, bukan sekadar menghafal menu software." },
 ] as const;
+
+
+/** About-page copy: intro, teaching approach, vision, mission. */
+const ABOUT = {
+  intro: "Accurate Pro Academy mengajarkan software Accurate untuk pemilik usaha, tim finance, dan akuntan. Anda belajar dari input jurnal sampai laporan keuangan jadi.",
+  approach: "Kami pakai contoh transaksi dari operasional perusahaan. Anda berlatih rekonsiliasi dan closing dengan data yang mirip pekerjaan sehari-hari. Setiap langkah dijelaskan alasannya, bukan cuma klik-nya.",
+  vision: "Pembukuan tertib harus jadi hal biasa di perusahaan Indonesia. Kami ingin tim finance bisa closing tepat waktu dan laporannya siap dipakai.",
+  mission: [
+    "Materi pelatihan yang langsung dipakai di pekerjaan berikutnya.",
+    "Latihan memakai kasus nyata: input jurnal, rekonsiliasi, sampai closing bulanan.",
+    "Pendampingan setelah kelas selesai, sampai tim Anda benar-benar jalan.",
+  ],
+} as const;
 
 /* ------------------------------------------------------------------ *
  * Accessor seam
@@ -297,6 +294,11 @@ export function getTargets() {
 /** Trainer profile for the about/program pages. */
 export function getTrainer() {
   return TRAINER;
+}
+
+/** About-page copy (intro, approach, vision, mission). */
+export function getAbout() {
+  return ABOUT;
 }
 
 /** Full program catalogue, mixing classes and services. */

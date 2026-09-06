@@ -31,7 +31,7 @@ Pure functions in `site.ts` and `pricing.ts` that mediate access to raw data arr
 ### File layout
 ```
 src/lib/
-  site.ts           — site-wide content data (SITE, NAV, PROGRAM, FAQ, etc.)
+  site.ts           — site-wide content data + about copy (SITE, NAV, PROGRAM, ABOUT, FAQ, etc.)
   pricing.ts        — pricing data + accessor seam
   consultation.ts   — consultation inquiry type + URL builder
   utils.ts          — cn() utility (Tailwind class merging)
