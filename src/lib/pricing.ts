@@ -12,8 +12,7 @@ export type TrainingPricingGroup = Readonly<{
   paket: readonly TrainingPackage[];
 }>;
 
-/** @deprecated Use getTrainingPricing() instead. */
-export const TRAINING_PRICING: readonly TrainingPricingGroup[] = [
+const TRAINING_PRICING: readonly TrainingPricingGroup[] = [
   {
     kategori: "Accurate Online",
     catatan: "Untuk pembukuan usaha perdagangan dan jasa",
@@ -51,16 +50,14 @@ export type CoursePriceTier = Readonly<{
   unggulan?: boolean;
 }>;
 
-/** @deprecated Use getCoursePricing() instead. */
-export const COURSE_PRICING: readonly CoursePriceTier[] = [
+const COURSE_PRICING: readonly CoursePriceTier[] = [
   { peserta: "1 orang", harga: "Rp1.500.000", keterangan: "Harga reguler" },
   { peserta: "2 orang", harga: "Rp1.000.000", keterangan: "Per orang" },
   { peserta: "3 orang", harga: "Rp800.000", keterangan: "Per orang", unggulan: true },
   { peserta: "5 orang", harga: "Rp700.000", keterangan: "Per orang" },
 ] as const;
 
-/** @deprecated Use getTerms() instead. */
-export const TERMS = [
+const TERMS = [
   "Durasi maksimal training 8 jam per hari, termasuk istirahat.",
   "Training pada akhir pekan atau hari libur dikenakan biaya tambahan.",
   "Biaya onsite di luar Jabodetabek dihitung berdasarkan lokasi dan kebutuhan akomodasi.",
@@ -111,13 +108,3 @@ export function getTerms(): readonly string[] {
   return TERMS;
 }
 
-export const ABOUT = {
-  intro: "Accurate Pro Academy mengajarkan software Accurate untuk pemilik usaha, tim finance, dan akuntan. Anda belajar dari input jurnal sampai laporan keuangan jadi.",
-  approach: "Kami pakai contoh transaksi dari operasional perusahaan. Anda berlatih rekonsiliasi dan closing dengan data yang mirip pekerjaan sehari-hari. Setiap langkah dijelaskan alasannya, bukan cuma klik-nya.",
-  vision: "Pembukuan tertib harus jadi hal biasa di perusahaan Indonesia. Kami ingin tim finance bisa closing tepat waktu dan laporannya siap dipakai.",
-  mission: [
-    "Materi pelatihan yang langsung dipakai di pekerjaan berikutnya.",
-    "Latihan memakai kasus nyata: input jurnal, rekonsiliasi, sampai closing bulanan.",
-    "Pendampingan setelah kelas selesai, sampai tim Anda benar-benar jalan.",
-  ],
-} as const;

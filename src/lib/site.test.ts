@@ -4,6 +4,7 @@ import {
   getNav,
   getTargets,
   getTrainer,
+  getAbout,
   getProgramItems,
   getClasses,
   getServices,
@@ -46,6 +47,15 @@ test("getTrainer has name, jabatan, and deskripsi", () => {
   assert.ok(t.nama);
   assert.ok(t.jabatan);
   assert.ok(t.deskripsi.length > 50);
+});
+
+test("getAbout has intro, approach, vision, and non-empty mission", () => {
+  const about = getAbout();
+  assert.ok(about.intro);
+  assert.ok(about.approach);
+  assert.ok(about.vision);
+  assert.equal(about.mission.length, 3);
+  for (const m of about.mission) assert.ok(m.trim().length > 0);
 });
 
 test("getProgramItems returns 4 items", () => {

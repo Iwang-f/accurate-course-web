@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { getKeunggulan, getTrainer } from "@/lib/site";
-import { ABOUT } from "@/lib/pricing";
+import { getAbout, getKeunggulan, getTrainer } from "@/lib/site";
 import { PageIntro } from "@/components/page-intro";
 import { CtaBanner } from "@/components/cta-banner";
 import { Badge } from "@/components/ui/badge";
@@ -14,12 +13,13 @@ export const metadata: Metadata = {
 
 export default function TentangPage() {
   const TRAINER = getTrainer();
+  const about = getAbout();
   return (
     <main className="flex-1">
       <PageIntro
         eyebrow="Tentang Kami"
         title="Pelatihan Accurate yang dijalankan oleh akuntan aktif"
-        description={ABOUT.intro}
+        description={about.intro}
       />
 
       {/* Trainer — V2 */}
@@ -49,7 +49,7 @@ export default function TentangPage() {
             <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Cara kami mengajar</h2>
           </Reveal>
           <div className="space-y-6">
-            <p className="text-base leading-7 text-muted-foreground text-left sm:text-justify">{ABOUT.approach}</p>
+            <p className="text-base leading-7 text-muted-foreground text-left sm:text-justify">{about.approach}</p>
             <StaggerGroup className="grid gap-5 sm:grid-cols-2">
               {getKeunggulan().map((k) => (
                 <RevealItem key={k.judul}>
@@ -69,14 +69,14 @@ export default function TentangPage() {
           <Reveal>
             <div>
               <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Visi</h2>
-              <p className="mt-4 text-base leading-7 text-muted-foreground text-left sm:text-justify">{ABOUT.vision}</p>
+              <p className="mt-4 text-base leading-7 text-muted-foreground text-left sm:text-justify">{about.vision}</p>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <div>
               <h2 className="font-display text-2xl font-semibold tracking-tight text-balance md:text-3xl">Misi</h2>
               <ul className="mt-4 space-y-3">
-                {ABOUT.mission.map((m) => (
+                {about.mission.map((m) => (
                   <li key={m} className="flex gap-3 text-base leading-7 text-muted-foreground">
                     <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-primary" />
                     {m}
